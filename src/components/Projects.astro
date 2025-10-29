@@ -1,0 +1,71 @@
+---
+import translations from "../data/translations.json";
+
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section id="work" class="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-blue-950 to-slate-900 py-20 px-6 md:px-10">
+    <div class="max-w-7xl w-full">
+
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 
+                id="project-title" 
+                class="text-5xl md:text-6xl font-bold text-white mb-4 relative inline-block"
+            >
+                {translations.en.projects.title}
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-linear-to-r from-cyan-400 to-blue-500 rounded-full"></span>
+            </h2>
+        </div>
+
+       <!--Card Project -->
+       <ProjectCard />
+
+    </div>
+</section>
+
+<script define:vars={{ translations }}>
+    let currentLang = 'en';
+
+    // Listen for language change events
+    document.addEventListener('languageChanged', (event) => {
+        currentLang = event.detail.lang;
+        updateProjectsContent(currentLang);
+    });
+
+    function updateProjectsContent(lang) {
+        // Update title
+        document.getElementById('project-title').innerHTML = 
+            `${translations[lang].projects.title}<span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>`;
+        
+        // Update button labels
+        document.querySelectorAll('.btn-code').forEach(btn => {
+            btn.textContent = translations[lang].projects.viewCode;
+        });
+        
+        document.querySelectorAll('.btn-demo').forEach(btn => {
+            btn.textContent = translations[lang].projects.viewDemo;
+        });
+
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    // Observe project cards
+    document.querySelectorAll('.project-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+

@@ -1,0 +1,222 @@
+{
+    "es": [
+        {
+        "id": "guruvirtualschool",
+        "title": "guruvirtualschool",
+        "description": "Paguina de curso ayude a implementar mejora del lado del alumno como barra de progreso y diseño y implementar metodo de pago con stripe",
+        "image": "/public/img/project/guru.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["php", "bostrap", "mysql"]
+        },
+        {
+        "id": "sketchLibrary",
+        "title": "SketchLibrary",
+        "description": "Aplicacion para compartir pdf de dibujo una colecion o biblioteca de descargar material, referencia de dibujo",
+        "image": "/public/img/project/sketchlibrary.png",
+        "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
+        "demoUrl": "https://sketchlibrary.netlify.app/",
+        "technologies": ["React", "Tailwind CSS", "Firebase"]
+        },
+        {
+        "id": "bienesraices",
+        "title": "Bienesraices",
+        "description": "Un sistema web completo de practica para la gestión de propiedades inmobiliarias desarrollado con PHP siguiendo el patrón MVC (Modelo-Vista-Controlador) y programación orientada a objetos. contiene Bñpg y contacto",
+        "image": "/public/img/project/bienesRaices.png",
+        "codeUrl": "https://github.com/usuario/astro-bytes",
+        "demoUrl": "",
+        "technologies": ["MYSql", "Php", "JavaScript"]
+        },
+        {
+        "id": "project-manager",
+        "title": "Project manager",
+        "description": "Gestion de proyecto de programacion una manera de encontrar tus proyectos y por categoria y peude abrir vs code o vs studio",
+        "image": "/public/img/project/projectManager.png",
+        "codeUrl": "https://github.com/EMSAREES/project-manager",
+        "demoUrl": "",
+        "technologies": ["c#", "Winforms"]
+        },
+        {
+        "id": "simple-Forum",
+        "title": "Simple Forum",
+        "description": "Bienvenido a Simple Forum, un proyecto de foro web moderno construido con React, Express y base de datos, inspirado en el tutorial de Dev.to . Esta versión es más robusta y funcional, permitiendo almacenamiento persistente y un backend completo con Express.",
+        "image": "/public/img/project/forum.png",
+        "codeUrl": "https://github.com/EMSAREES/simple-forum",
+        "demoUrl": "",
+        "technologies": ["JavaScript", "TypeScript", "React", "Node Js", "Express", "Postgres"]
+        },
+        {
+        "id": "design_festivalMusical",
+        "title": "Design festivalMusical",
+        "description": "¡Bienvenido a Design Festival Musical! Un proyecto creativo que combina el arte del diseño gráfico con la energía vibrante de la música. Este repositorio contiene una serie de diseños visuales inspirados en festivales musicales, ideales para promocionar eventos, conciertos y festivales en plataformas digitales",
+        "image": "/public/img/project/design_festivalMusical.png",
+        "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
+        "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
+        "technologies": ["JavaScript", "HTML", "SASS"]
+        },
+        {
+        "id": "gestion-de-Gymnasio",
+        "title": "Gestion de Gymnasio",
+        "description": "Gestión de Gimnasio es un sistema integral de escritorio desarrollado en C# con Windows Forms, diseñado para simplificar la administración de gimnasios y mejorar la experiencia de usuarios y personal.",
+        "image": "/public/img/project/sistema_gym.png",
+        "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
+        "demoUrl": "",
+        "technologies": ["c#", "Winforms", "SQLServer"]
+        },
+        {
+        "id": "convertir-imagen-a-texto",
+        "title": "Convertir-imagen-a-texto",
+        "description": "Convertir Imagen a Texto es una aplicación de escritorio desarrollada en C# con Windows Forms que permite extraer texto de imágenes de manera rápida y sencilla usando OCR (Tesseract). Ideal para digitalizar documentos, capturas de pantalla o cualquier texto contenido en imágenes.",
+        "image": "/public/img/project/cover_text.png",
+        "codeUrl": "https://github.com/EMSAREES/convertir-imagen-a-texto",
+        "demoUrl": "",
+        "technologies": ["c#", "Winforms "]
+        },
+        {
+        "id": "games",
+        "title": "Games",
+        "description": "Five Play Games es una colección de 5 divertidos juegos web desarrollados con JavaScript, HTML y CSS, diseñada para jugar solo o con amigos directamente desde tu navegador.",
+        "image": "/public/img/project/game.png",
+        "codeUrl": "https://github.com/EMSAREES/games",
+        "demoUrl": "https://fiveplay.netlify.app/",
+        "technologies": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+        "id": "frontend-Password-Crypto",
+        "title": "Frontend-Password-Crypto",
+        "description": "Frontend Password Crypto es una aplicación web desarrollada con React que permite cifrar y descifrar contraseñas de manera segura directamente desde tu navegador. Es ideal para practicar criptografía básica y proteger información sensible de forma rápida y sencilla.",
+        "image": "/public/img/project/Gestor_de_Contraseñas.png",
+        "codeUrl": "https://github.com/EMSAREES/Frontend-Password-Crypto?tab=readme-ov-file",
+        "demoUrl": "https://keycrypte-descripte.netlify.app/",
+        "technologies": ["React","JavaScript"]
+        },
+        {
+        "id": "backend-Password-Crypto",
+        "title": "Backend-Password-Crypto",
+        "description": "Backend Password Crypto es una API segura diseñada para cifrar y descifrar texto utilizando el algoritmo AES-256-CBC, garantizando la confidencialidad y protección de información sensible. Esta API es ideal para integrarse en aplicaciones web o móviles que necesiten seguridad en el manejo de contraseñas o datos privados.",
+        "image": "/public/img/project/Gestor_de_Contraseñas_Backend.png",
+        "codeUrl": "https://github.com/EMSAREES/Backend-Password-Crypto",
+        "demoUrl": "",
+        "technologies": ["python"]
+        },
+        {
+        "id": "movie-Library",
+        "title": "Movie Library",
+        "description": "Movie Library 🎬 Aplicación web ASP.NET Core MVC para explorar películas usando la API de TMDB. Características",
+        "image": "/public/img/project/movieLibrery.png",
+        "codeUrl": "https://github.com/EMSAREES/Movie-Library",
+        "demoUrl": "",
+        "technologies": ["c#", "ASP.NET CORE", "API"]
+        }
+    ],
+    "en": [
+        {
+        "id": "guruvirtualschool",
+        "title": "Guru Virtual School",
+        "description": "Course platform where I helped implement improvements on the student side such as a progress bar, visual design, and integrated a payment method with Stripe.",
+        "image": "/public/img/project/guru.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["PHP", "Bootstrap", "MySQL"]
+        },
+        {
+        "id": "sketchLibrary",
+        "title": "SketchLibrary",
+        "description": "Application for sharing drawing PDFs — a collection or library for downloading drawing materials and references.",
+        "image": "/public/img/project/sketchlibrary.png",
+        "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
+        "demoUrl": "https://sketchlibrary.netlify.app/",
+        "technologies": ["React", "Tailwind CSS", "Firebase"]
+        },
+        {
+        "id": "bienesraices",
+        "title": "bienesraices",
+        "description": "A complete web system for managing real estate properties developed with PHP following the MVC (Model-View-Controller) pattern and object-oriented programming. Includes blog and contact section.",
+        "image": "/public/img/project/bienesRaices.png",
+        "codeUrl": "https://github.com/usuario/astro-bytes",
+        "demoUrl": "",
+        "technologies": ["MySQL", "PHP", "JavaScript"]
+        },
+        {
+        "id": "project-manager",
+        "title": "Project Manager",
+        "description": "Programming project manager that helps you organize your projects by category and open them directly in VS Code or Visual Studio.",
+        "image": "/public/img/project/projectManager.png",
+        "codeUrl": "https://github.com/EMSAREES/project-manager",
+        "demoUrl": "",
+        "technologies": ["C#", "WinForms"]
+        },
+        {
+        "id": "simple-Forum",
+        "title": "Simple Forum",
+        "description": "Welcome to Simple Forum — a modern web forum project built with React, Express, and a database, inspired by the Dev.to tutorial. This version is more robust and functional, with persistent storage and a full Express backend.",
+        "image": "/public/img/project/forum.png",
+        "codeUrl": "https://github.com/EMSAREES/simple-forum",
+        "demoUrl": "",
+        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "Postgres"]
+        },
+        {
+        "id": "design_festivalMusical",
+        "title": "Design Festival Musical",
+        "description": "Welcome to Design Festival Musical! A creative project that combines graphic design with the vibrant energy of music. This repository contains visual designs inspired by music festivals, perfect for promoting events and concerts online.",
+        "image": "/public/img/project/design_festivalMusical.png",
+        "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
+        "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
+        "technologies": ["JavaScript", "HTML", "SASS"]
+        },
+        {
+        "id": "gestion-de-Gymnasio",
+        "title": "Gym Management System",
+        "description": "Gym Management is a comprehensive desktop system developed in C# with Windows Forms, designed to simplify gym administration and enhance user and staff experience.",
+        "image": "/public/img/project/sistema_gym.png",
+        "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
+        "demoUrl": "",
+        "technologies": ["C#", "WinForms", "SQL Server"]
+        },
+        {
+        "id": "convertir-imagen-a-texto",
+        "title": "Image-to-Text Converter",
+        "description": "Image to Text Converter is a desktop application developed in C# with Windows Forms that extracts text from images quickly and easily using OCR (Tesseract). Ideal for digitizing documents, screenshots, or any image text.",
+        "image": "/public/img/project/cover_text.png",
+        "codeUrl": "https://github.com/EMSAREES/convertir-imagen-a-texto",
+        "demoUrl": "",
+        "technologies": ["C#", "WinForms"]
+        },
+        {
+        "id": "games",
+        "title": "Games",
+        "description": "Five Play Games is a collection of 5 fun web games developed with JavaScript, HTML, and CSS — designed for solo or multiplayer play directly in your browser.",
+        "image": "/public/img/project/game.png",
+        "codeUrl": "https://github.com/EMSAREES/games",
+        "demoUrl": "https://fiveplay.netlify.app/",
+        "technologies": ["HTML", "CSS", "JavaScript"]
+        },
+        {
+        "id": "frontend-Password-Crypto",
+        "title": "Frontend Password Crypto",
+        "description": "Frontend Password Crypto is a web app built with React that allows secure password encryption and decryption directly in your browser. Ideal for practicing basic cryptography and protecting sensitive information quickly and easily.",
+        "image": "/public/img/project/Gestor_de_Contraseñas.png",
+        "codeUrl": "https://github.com/EMSAREES/Frontend-Password-Crypto?tab=readme-ov-file",
+        "demoUrl": "https://keycrypte-descripte.netlify.app/",
+        "technologies": ["React", "JavaScript"]
+        },
+        {
+        "id": "backend-Password-Crypto",
+        "title": "Backend Password Crypto",
+        "description": "Backend Password Crypto is a secure API designed to encrypt and decrypt text using the AES-256-CBC algorithm, ensuring confidentiality and data protection. Ideal for integration into web or mobile apps that require password or sensitive data security.",
+        "image": "/public/img/project/Gestor_de_Contraseñas_Backend.png",
+        "codeUrl": "https://github.com/EMSAREES/Backend-Password-Crypto",
+        "demoUrl": "",
+        "technologies": ["Python"]
+        },
+        {
+        "id": "movie-Library",
+        "title": "Movie Library",
+        "description": "Movie Library 🎬 — ASP.NET Core MVC web application for exploring movies using the TMDB API. Features include search, details, and movie exploration.",
+        "image": "/public/img/project/movieLibrery.png",
+        "codeUrl": "https://github.com/EMSAREES/Movie-Library",
+        "demoUrl": "",
+        "technologies": ["C#", "ASP.NET Core", "API"]
+        }
+    ]
+}

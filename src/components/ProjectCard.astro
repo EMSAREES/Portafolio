@@ -1,0 +1,152 @@
+---
+import projects from "../data/projects.json";
+import translations from "../data/translations.json";
+---
+
+<!-- Projects Grid -->
+<div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    {projects.en.map((project, index) => (
+        <article 
+            class="project-card group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/60 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 hover:-translate-y-2"
+            data-project-index={index}
+        >
+            
+            <!-- Project Image -->
+            <div class="relative h-64 overflow-hidden bg-slate-900">
+                <img 
+                    src={project.image} 
+                    alt={project.title}
+                    class="project-image w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <!-- Overlay on hover -->
+                <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+                
+                <!-- Technologies Badge -->
+                <div class="project-tech absolute top-4 left-4 flex flex-wrap gap-2">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                        <span class="px-3 py-1 bg-cyan-500/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+            </div>
+
+            <!-- Project Info -->
+            <div class="p-6 space-y-4">
+                <!-- Title -->
+                <h3 class="project-title text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
+                    {project.title}
+                </h3>
+
+                <!-- Description -->
+                <p class="project-description text-gray-400 text-sm line-clamp-3">
+                    {project.description}
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex gap-4 pt-4">
+
+                    {project.codeUrl && (
+                        <a 
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-code-link flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 hover:bg-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 group/btn"
+                        >
+                            <svg class="w-5 h-5 transition-transform duration-300 group-hover/btn:rotate-12" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="btn-code">{translations.en.projects.viewCode}</span>
+                        </a>
+                    )}     
+
+                    {project.demoUrl && (
+                        <a 
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-demo-link flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-all duration-300 group/btn shadow-lg shadow-cyan-500/50"
+                        >
+                            <svg class="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                            <span class="btn-demo">{translations.en.projects.viewDemo}</span>
+                        </a>
+                    )}
+
+                </div>
+            </div>
+        </article>
+    ))}
+</div>
+
+<script define:vars={{ translations }}>
+  
+    // Escuchar cambios de idioma
+    document.addEventListener('languageChanged', (event) => {
+        const lang = event.detail.lang;
+        updateProjectCards(lang);
+    });
+
+    function updateProjectCards(lang) {
+        const projectsData = projects[lang];
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        projectCards.forEach((card, index) => {
+            if (projectsData[index]) {
+                const project = projectsData[index];
+                
+                // Update image
+                const img = card.querySelector('.project-image');
+                img.src = project.image;
+                img.alt = project.title;
+                
+                // Update title
+                card.querySelector('.project-title').textContent = project.title;
+                
+                // Update description
+                card.querySelector('.project-description').textContent = project.description;
+                
+                // Update technologies
+                const techContainer = card.querySelector('.project-tech');
+                techContainer.innerHTML = '';
+                project.technologies.slice(0, 3).forEach(tech => {
+                    const badge = document.createElement('span');
+                    badge.className = 'px-3 py-1 bg-cyan-500/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full';
+                    badge.textContent = tech;
+                    techContainer.appendChild(badge);
+                });
+            }
+        });
+    }
+</script>
+
+
+<style>
+    .project-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .project-card.animate-fade-in-up {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Stagger animation delay for project cards */
+    .project-card:nth-child(1) { transition-delay: 0.1s; }
+    .project-card:nth-child(2) { transition-delay: 0.2s; }
+    .project-card:nth-child(3) { transition-delay: 0.3s; }
+    .project-card:nth-child(4) { transition-delay: 0.4s; }
+    .project-card:nth-child(5) { transition-delay: 0.5s; }
+    .project-card:nth-child(6) { transition-delay: 0.6s; }
+
+    /* Line clamp for description */
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>

@@ -1,11 +1,40 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import "../styles/globales.css";
+
 import Layout from '../layouts/Layout.astro';
 
+
+import LandingHeader from "../components/LandingHeader.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+    <LandingHeader />
+    <main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+        <!-- primera seccion vienbenida -->
+        <div class="snap-center">
+            <Hero />
+        </div>
+        
+        <!-- Accerca de mi -->
+        <div class="snap-center">
+            <About />
+        </div>
+
+        <!-- mis projectos -->
+        <div class="snap-center">
+            <Projects />
+        </div>
+
+        <!-- contacto -->
+        <div class="snap-center">
+            <Contact />
+        </div>
+    </main>
+    
 </Layout>

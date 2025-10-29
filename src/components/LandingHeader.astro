@@ -1,0 +1,225 @@
+---
+import translations from "../data/translations.json";
+---
+
+<header class="bg-linear-to-r from-slate-900 via-blue-950 to-slate-900 py-4 px-6 md:px-10 flex items-center fixed top-0 w-full justify-end z-50 shadow-lg">
+    
+     <!-- Desktop Navigation -->
+    <nav class="hidden md:block">
+        <ul 
+            class="flex items-center gap-1 text-[18px] text-gray-200 [&>li>a]:text-current [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a]:rounded-lg [&>li>a]:transition-all [&>li>a:hover]:bg-cyan-500/20 [&>li>a:hover]:text-cyan-400"
+            id="navLinks"
+        >
+           <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#work" class="nav-link">Work</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li class="ml-2">
+                <select 
+                    id="language-selector"
+                    class="bg-cyan-900 text-white font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-cyan-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-900"
+                >
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                </select> 
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button 
+        id="mobile-menu-button"
+        class="md:hidden text-white p-2 hover:bg-cyan-500/20 rounded-lg transition-colors"
+        aria-label="Toggle menu"
+    >
+        <svg 
+            id="hamburger-icon"
+            class="w-7 h-7" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+        >
+            <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"
+            />
+        </svg>
+        <svg 
+            id="close-icon"
+            class="w-7 h-7 hidden" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+        >
+            <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M6 18L18 6M6 6l12 12"
+            />
+        </svg>
+    </button>
+
+    <!-- Mobile Navigation -->
+    <nav 
+        id="mobile-menu"
+        class="hidden md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-sm shadow-xl"
+    >
+        <ul class="flex flex-col text-[18px] text-gray-200 py-4">
+            <li>
+                <a 
+                    href="#home" 
+                    class="nav-link-mobile block px-6 py-3 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors"
+                >
+                    Home
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="#about" 
+                    class="nav-link-mobile block px-6 py-3 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors"
+                >
+                    About
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="#work" 
+                    class="nav-link-mobile block px-6 py-3 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors"
+                >
+                    Work
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="#contact" 
+                    class="nav-link-mobile block px-6 py-3 hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors"
+                >
+                    Contact
+                </a>
+            </li>
+            <li class="px-6 py-3">
+                <select 
+                    id="language-selector-mobile"
+                    class="w-full bg-cyan-500 text-white font-semibold px-4 py-2 rounded-lg cursor-pointer hover:bg-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                >
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                </select> 
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script define:vars={{translations}}>
+let currentLang = "en";
+
+// Toggle Mobule Menu
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileMenuButton.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        
+    if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    } else {
+        mobileMenu.classList.remove('hidden');
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+    }
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-link-mobile').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    });
+});
+</script>
+
+<script define:vars={{translations}}>
+// Language Change Function
+ function updateLanguage(lang) {
+    currentLang = lang;
+        
+    // Update desktop nav
+    const desktopLinks = document.querySelectorAll('nav:not(#mobile-menu) .nav-link');
+    desktopLinks[0].textContent = translations[lang].nav.home;
+    desktopLinks[1].textContent = translations[lang].nav.about;
+    desktopLinks[2].textContent = translations[lang].nav.work;
+    desktopLinks[3].textContent = translations[lang].nav.contact;
+
+    // Update mobile nav
+    const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+    mobileLinks[0].textContent = translations[lang].nav.home;
+    mobileLinks[1].textContent = translations[lang].nav.about;
+    mobileLinks[2].textContent = translations[lang].nav.work;
+    mobileLinks[3].textContent = translations[lang].nav.contact;
+
+    // Dispatch custom event for other components to listen
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+}
+
+// Desktop Language Selector
+const languageSelector = document.getElementById('language-selector');
+languageSelector.addEventListener('change', (e) => {
+    updateLanguage(e.target.value);
+    document.getElementById('language-selector-mobile').value = e.target.value;
+});
+
+// Mobile Language Selector
+const languageSelectorMobile = document.getElementById('language-selector-mobile');
+languageSelectorMobile.addEventListener('change', (e) => {
+    updateLanguage(e.target.value);
+    document.getElementById('language-selector').value = e.target.value;
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+</script>
+
+<style>
+    /* Smooth transitions */
+    nav, select, button {
+        transition: all 0.3s ease;
+    }
+
+    /* Custom scrollbar for mobile menu */
+    #mobile-menu {
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    #mobile-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #mobile-menu::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    #mobile-menu::-webkit-scrollbar-thumb {
+        background: #06b6d4;
+        border-radius: 3px;
+    }
+</style>

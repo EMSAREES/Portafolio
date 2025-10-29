@@ -1,0 +1,336 @@
+---
+import translations from "../data/translations.json";
+---
+
+<section id="about" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-blue-950 py-20 px-6 md:px-10">
+    <div class="max-w-7xl w-full">
+        
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+            <h2 
+                id="about-title" 
+                class="text-5xl md:text-6xl font-bold text-white mb-4 relative inline-block"
+            >
+                {translations.en.about.title}
+                <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            
+            <!-- Left Column: Description -->
+            <div class="space-y-8">
+                <div class="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 shadow-xl">
+                    <p 
+                        id="about-description" 
+                        class="text-gray-300 text-lg leading-relaxed"
+                    >
+                        {translations.en.about.description}
+                    </p>
+                </div>
+
+                <!-- Education Section -->
+                <div class="space-y-4">
+                    <h3 
+                        id="education-title" 
+                        class="text-2xl font-bold text-white flex items-center gap-3"
+                    >
+                        <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                        </svg>
+                        <span>{translations.en.about.education}</span>
+                    </h3>
+
+                    <div class="space-y-3">
+                        <!-- Education  -->
+                        <div class="bg-slate-800/30 backdrop-blur-sm rounded-xl p-6 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 transform hover:translate-x-2">
+                            <h4 class="text-xl font-semibold text-cyan-400 mb-2">Ingeniería de Software</h4>
+                            <p class="text-gray-400 mb-1">Universidad Autonoma de Occidente</p>
+                            <p class="text-sm text-gray-500">2021 - 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Tech Stack -->
+            <div class="space-y-6">
+                <h3 
+                    id="tech-stack-title" 
+                    class="text-2xl font-bold text-white flex items-center gap-3"
+                >
+                    <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                    <span>{translations.en.about.techStack}</span>
+                </h3>
+
+                <!-- Tech Stack Grid -->
+                <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
+                    
+                    <!-- HTML -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-orange-500/10 group-hover:bg-orange-500/20">
+                            <svg class="w-12 h-12 text-orange-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">HTML</p>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-blue-500/10 group-hover:bg-blue-500/20">
+                            <svg class="w-12 h-12 text-blue-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">CSS</p>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-yellow-400/10 group-hover:bg-yellow-400/20">
+                            <svg class="w-12 h-12 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">JavaScript</p>
+                    </div>
+
+                    <!-- React -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-cyan-400/10 group-hover:bg-cyan-400/20">
+                            <svg class="w-12 h-12 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">React</p>
+                    </div>
+
+                    <!-- Git -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-orange-600/10 group-hover:bg-orange-600/20">
+                            <svg class="w-12 h-12 text-orange-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.995L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">Git</p>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-gray-400/10 group-hover:bg-gray-400/20">
+                            <svg class="w-12 h-12 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">GitHub</p>
+                    </div>
+
+                    <!-- TypeScript -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-blue-600/10 group-hover:bg-blue-600/20">
+                            <svg class="w-12 h-12 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm11.25 17.25v-2.25h3v-1.5h-3v-1.5h3v-1.5h-4.5v6.75h1.5zm-6-6.75v1.5h1.5v5.25h1.5v-5.25h1.5v-1.5h-4.5z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">TypeScript</p>
+                    </div>
+
+                    <!-- C# -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-purple-600/10 group-hover:bg-purple-600/20">
+                            <svg class="w-12 h-12 text-purple-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zM9.426 7.12a5.55 5.55 0 0 1 1.985.38v1.181a4.5 4.5 0 0 0-2.025-.566 2.445 2.445 0 0 0-1.787.689 2.437 2.437 0 0 0-.712 1.808c0 .733.237 1.308.712 1.727.474.418 1.117.627 1.928.627.635 0 1.27-.168 1.905-.504v1.181a5.5 5.5 0 0 1-2.144.424c-1.098 0-1.975-.308-2.632-.924-.657-.616-.985-1.459-.985-2.531 0-1.072.337-1.92 1.01-2.544.673-.624 1.574-.936 2.703-.936zm7.51.219h.908v4.034h-1.007v-.308a1.337 1.337 0 0 1-.524.281 1.927 1.927 0 0 1-.621.108c-.585 0-1.055-.195-1.411-.585-.356-.39-.534-.911-.534-1.562 0-.678.185-1.214.555-1.609a1.791 1.791 0 0 1 1.367-.593c.473 0 .86.143 1.161.427v-.193zm-5.537.04h1.008v.308c.2-.12.398-.214.596-.281a1.927 1.927 0 0 1 .621-.108c.585 0 1.055.195 1.411.585.356.39.534.911.534 1.562 0 .678-.185 1.214-.555 1.609a1.791 1.791 0 0 1-1.367.593c-.473 0-.86-.143-1.161-.427v1.74h-1.087V7.379zm2.058 1.213c-.348 0-.622.122-.822.366-.2.244-.3.597-.3 1.058 0 .435.095.777.285 1.028.19.251.457.377.8.377.348 0 .622-.122.822-.366.2-.244.3-.597.3-1.058 0-.435-.095-.777-.285-1.028-.19-.251-.457-.377-.8-.377zm3.587 0c-.348 0-.622.122-.822.366-.2.244-.3.597-.3 1.058 0 .435.095.777.285 1.028.19.251.457.377.8.377.348 0 .622-.122.822-.366.2-.244.3-.597.3-1.058 0-.435-.095-.777-.285-1.028-.19-.251-.457-.377-.8-.377z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">C#</p>
+                    </div>
+
+                    <!-- PHP -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-indigo-500/10 group-hover:bg-indigo-500/20">
+                            <svg class="w-12 h-12 text-indigo-500" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.01 10.207h-.944l-.515 2.648h.838c.556 0 .97-.105 1.242-.314.272-.21.455-.559.55-1.049.092-.47.05-.802-.124-.995-.175-.193-.523-.29-1.047-.29zM12 5.688C5.373 5.688 0 8.514 0 12s5.373 6.313 12 6.313S24 15.486 24 12c0-3.486-5.373-6.312-12-6.312zm-3.26 7.451c-.261.25-.575.438-.917.551-.336.108-.765.164-1.285.164H5.357l-.327 1.681H3.652l1.23-6.326h2.65c.797 0 1.378.209 1.744.628.366.418.476 1.002.33 1.752a2.836 2.836 0 0 1-.305.847c-.143.255-.33.49-.561.703zm4.024.715l.543-2.799c.063-.318.039-.536-.068-.651-.107-.116-.336-.174-.687-.174h-.813l-.69 3.624H9.667l1.23-6.326h1.4l-.513 2.637h.844c.689 0 1.153.138 1.39.417.24.278.29.695.149 1.249l-.561 2.899h-1.382zm4.814-3.51c-.358.423-.736.748-1.136.975-.399.227-.894.34-1.484.34h-.989l-.33 1.686h-1.378l1.23-6.326h2.031c.63 0 1.119.104 1.466.31.347.207.556.513.627.918.07.404.004.878-.198 1.422-.201.545-.504 1.021-.839 1.429z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">PHP</p>
+                    </div>
+
+                    <!-- Express -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-gray-700/10 group-hover:bg-gray-700/20 flex items-center justify-center">
+                            <img src="https://cdn.simpleicons.org/express/FFFFFF" alt="Express.js" class="w-12 h-12" />
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">Express</p>
+                    </div>
+
+                    <!-- SQLServer -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-red-600/10 group-hover:bg-red-600/20">
+                            <svg class="w-12 h-12 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2.09 0h19.82C23.064 0 24 .936 24 2.09v19.82c0 1.154-.936 2.09-2.09 2.09H2.09C.936 24 0 23.064 0 21.91V2.09C0 .936.936 0 2.09 0zM8.647 5.419c-.337.09-.645.27-.888.518-.243.249-.415.558-.494.893-.08.334-.065.687.044 1.015.11.327.312.618.583.837.27.22.596.362.941.412.345.05.698.005 1.017-.13.32-.134.598-.354.804-.635.206-.28.333-.608.367-.944.034-.336-.023-.675-.165-.977-.142-.302-.366-.56-.645-.745-.28-.184-.603-.289-.934-.303-.112-.005-.225.002-.335.03zm-.035 1.306c.177-.008.354.04.51.138.157.098.286.239.371.407.085.168.123.356.108.543-.014.187-.077.368-.182.52-.105.153-.249.275-.417.352-.168.077-.352.107-.535.085-.182-.022-.357-.094-.504-.208-.147-.114-.262-.264-.332-.433-.07-.168-.094-.351-.069-.528.025-.178.095-.346.203-.49.108-.143.252-.255.416-.323.164-.068.341-.096.516-.088l-.085.025zm7.36-.04c-.338.09-.646.27-.89.518-.243.249-.414.558-.494.893-.08.334-.065.687.044 1.015.11.327.312.618.583.837.27.22.596.362.941.412.345.05.698.005 1.017-.13.32-.134.598-.354.804-.635.206-.28.333-.608.367-.944.034-.336-.023-.675-.165-.977-.142-.302-.366-.56-.645-.745-.28-.184-.603-.289-.934-.303-.112-.005-.225.002-.336.03zm-.035 1.306c.177-.008.354.04.51.138.157.098.286.239.371.407.085.168.123.356.108.543-.014.187-.077.368-.182.52-.105.153-.249.275-.417.352-.168.077-.352.107-.535.085-.182-.022-.357-.094-.504-.208-.147-.114-.262-.264-.332-.433-.07-.168-.094-.351-.069-.528.025-.178.095-.346.203-.49.108-.143.252-.255.416-.323.164-.068.341-.096.516-.088l-.085.025zM6.1 10.204c-.08.022-.157.057-.225.104-.068.048-.126.107-.171.176-.045.068-.076.144-.092.223-.016.08-.016.161 0 .24.016.08.047.157.092.226.045.068.103.128.171.175.068.048.145.083.225.105.08.022.163.029.245.022l1.408-.153v1.326l-1.655.18c-.318.035-.629-.016-.916-.15-.288-.135-.537-.343-.733-.612-.196-.269-.333-.584-.404-.927-.07-.343-.073-.703-.007-1.058.066-.355.197-.694.387-.997.19-.303.436-.563.724-.766.288-.203.615-.345.963-.418.348-.073.71-.077 1.065-.012l1.571.171v1.292l-1.408-.153c-.082-.007-.166 0-.246.022zm9.59 0c-.08.022-.157.057-.225.104-.068.048-.126.107-.171.176-.045.068-.076.144-.092.223-.016.08-.016.161 0 .24.016.08.047.157.092.226.045.068.103.128.171.175.068.048.145.083.225.105.08.022.163.029.245.022l1.408-.153v1.326l-1.655.18c-.318.035-.629-.016-.916-.15-.288-.135-.537-.343-.733-.612-.196-.269-.333-.584-.404-.927-.07-.343-.073-.703-.007-1.058.066-.355.197-.694.387-.997.19-.303.436-.563.724-.766.288-.203.615-.345.963-.418.348-.073.71-.077 1.065-.012l1.571.171v1.292l-1.408-.153c-.082-.007-.166 0-.246.022zM4.043 11.753v3.883c0 .082.014.164.042.24.028.078.07.148.124.209.053.06.118.109.19.144.072.035.15.054.23.056l1.571.171v1.292l-1.817-.198c-.348-.038-.687-.148-1-.325-.313-.176-.59-.412-.815-.694-.226-.282-.395-.605-.498-.951-.103-.346-.138-.71-.103-1.071V11.62l1.076.133zm11.263 0v3.883c0 .082.014.164.042.24.028.078.07.148.124.209.053.06.118.109.19.144.072.035.15.054.23.056l1.571.171v1.292l-1.817-.198c-.348-.038-.687-.148-1-.325-.313-.176-.59-.412-.815-.694-.226-.282-.395-.605-.498-.951-.103-.346-.138-.71-.103-1.071V11.62l1.076.133z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">SQL Server</p>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="tech-card group">
+                        <div class="tech-icon bg-blue-400/10 group-hover:bg-blue-400/20">
+                            <svg class="w-12 h-12 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16.405 5.501c-.115 0-.193.014-.274.033v.013h.014c.054.104.146.18.214.273.054.107.1.214.154.32l.014-.015c.094-.066.14-.172.14-.333-.04-.047-.046-.094-.08-.14-.04-.067-.126-.1-.18-.153zM5.77 18.695h-.927a50.854 50.854 0 00-.27-4.41h-.008l-1.41 4.41H2.45l-1.4-4.41h-.01a72.892 72.892 0 00-.195 4.41H0c.055-1.966.192-3.81.41-5.53h1.15l1.335 4.064h.008l1.347-4.064h1.095c.242 2.015.384 3.86.428 5.53zm4.017-4.08c-.378 2.045-.876 3.533-1.492 4.46-.482.716-1.01 1.073-1.583 1.073-.153 0-.34-.046-.566-.138v-.494c.11.017.24.026.386.026.268 0 .483-.075.647-.222.197-.18.295-.382.295-.605 0-.155-.077-.47-.23-.944L6.23 14.615h.91l.727 2.36c.164.536.233.91.205 1.123.4-1.064.678-2.227.835-3.483zm12.325 4.08h-2.63v-5.53h.885v4.85h1.745zm-3.32.135l-1.016-.5c.09-.076.177-.158.255-.25.433-.506.648-1.258.648-2.253 0-1.83-.718-2.746-2.155-2.746-.704 0-1.254.232-1.65.698-.43.508-.646 1.256-.646 2.245 0 .972.19 1.686.574 2.14.35.414.84.622 1.465.622.287 0 .571-.048.85-.144l.768.768c-.32.217-.68.39-1.075.52-.395.13-.835.195-1.32.195-1.006 0-1.79-.35-2.35-1.05-.56-.698-.84-1.63-.84-2.793 0-1.21.305-2.18.915-2.912.61-.732 1.416-1.098 2.42-1.098 1.005 0 1.787.35 2.346 1.05.56.7.84 1.632.84 2.795 0 .752-.137 1.39-.41 1.912-.274.523-.656.93-1.146 1.222z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">MySQL</p>
+                    </div>
+
+                </div>
+
+                <!-- Additional Info Card -->
+                <div class="mt-8 bg-linear-to-br from-cyan-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-6 border border-cyan-500/30">
+                    <div class="flex items-start gap-4">
+                        <svg class="w-8 h-8 text-cyan-400 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <div>
+                            <h4 id="continuous-learning-title" class="text-lg font-semibold text-white mb-2"> {translations.en.about.continuousLearning}</h4>
+                            <p id="continuous-learning-description" class="text-gray-400 text-sm">
+                                {translations.en.about.continuousLearningDescription}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script define:vars={{ translations }}>
+    // Listen for language change events
+    document.addEventListener('languageChanged', (event) => {
+        const lang = event.detail.lang;
+        updateAboutContent(lang);
+    });
+
+    function updateAboutContent(lang) {
+        // Update about title
+        const titleEl = document.getElementById('about-title');
+        if (titleEl) {
+            titleEl.innerHTML = 
+                `${translations[lang].about.title}<span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>`;
+        }
+
+        // Update about description
+        const descriptionEl = document.getElementById('about-description');
+        if (descriptionEl) {
+            descriptionEl.textContent = translations[lang].about.description;
+        }
+
+        // Update education title
+        const educationEl = document.getElementById('education-title');
+        if (educationEl) {
+            educationEl.innerHTML = `
+                <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+                </svg>
+                <span>${translations[lang].about.education}</span>
+            `;
+        }
+
+        // Update tech stack title
+        const techStackEl = document.getElementById('tech-stack-title');
+        if (techStackEl) {
+            techStackEl.innerHTML = `
+                <svg class="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                <span>${translations[lang].about.techStack}</span>
+            `;
+        }
+
+        // Update continuous learning title
+        const learningTitleEl = document.getElementById('continuous-learning-title');
+        if (learningTitleEl) {
+            learningTitleEl.textContent = translations[lang].about.continuousLearning || 
+                (lang === 'es' ? 'Aprendizaje Continuo' : 'Continuous Learning');
+        }
+
+        // Update continuous learning description
+        const learningDescEl = document.getElementById('continuous-learning-description');
+        if (learningDescEl) {
+            learningDescEl.textContent = translations[lang].about.continuousLearningDescription || 
+                (lang === 'es' ? 'Constantemente expandiendo mis conocimientos con nuevas tecnologías y herramientas.' : 
+                'Constantly expanding my knowledge with new technologies and tools.');
+        }
+    }
+
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fade-in');
+            }
+        });
+    }, observerOptions);
+
+    // Observe tech cards
+    document.querySelectorAll('.tech-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+
+<style>
+    .tech-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+    }
+
+    .tech-card.animate-fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .tech-icon {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(6, 182, 212, 0.1);
+    }
+
+    .tech-card:hover .tech-icon {
+        transform: translateY(-5px) scale(1.05);
+        border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    /* Stagger animation delay for tech cards */
+    .tech-card:nth-child(1) { transition-delay: 0.1s; }
+    .tech-card:nth-child(2) { transition-delay: 0.2s; }
+    .tech-card:nth-child(3) { transition-delay: 0.3s; }
+    .tech-card:nth-child(4) { transition-delay: 0.4s; }
+    .tech-card:nth-child(5) { transition-delay: 0.5s; }
+    .tech-card:nth-child(6) { transition-delay: 0.6s; }
+    .tech-card:nth-child(7) { transition-delay: 0.7s; }
+    .tech-card:nth-child(8) { transition-delay: 0.8s; }
+    .tech-card:nth-child(9) { transition-delay: 0.9s; }
+    .tech-card:nth-child(10) { transition-delay: 1.0s; }
+    .tech-card:nth-child(11) { transition-delay: 1.1s; }
+    .tech-card:nth-child(12) { transition-delay: 1.2s; }
+</style>
