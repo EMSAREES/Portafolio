@@ -10,7 +10,7 @@
         "greeting": "Hola, soy Emilio R.",
         "role": "Desarrollador ",
         "description": "Amo crear aplicaciones web y desktop  .",
-        "picture":"/src/assets/imagen.jpeg",
+        "picture":"/public/img/imagen.jpeg",
         "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
         "github":"https://github.com/EMSAREES"
         },
@@ -49,7 +49,7 @@
         "greeting": "Hi, I'm Emilio R.",
         "role": "Developer",
         "description": "That loves creating web and desktop apps.",
-        "picture":"/src/assets/imagen.jpeg",
+        "picture":"/public/img/imagen.jpeg",
         "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
         "github":"https://github.com/EMSAREES"
         },
