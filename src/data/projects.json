@@ -19,6 +19,15 @@
         "technologies": ["React", "Tailwind CSS", "Firebase"]
         },
         {
+        "id": "marketplace-Eco-Rueda",
+        "title": "Marketplace Eco Rueda",
+        "description": "Plataforma de comercio electrónico enfocada en la venta de sillas ecológicas. Incluye un sistema de carrito de compras dinámico, integración segura con Stripe para pagos en línea y una interfaz moderna desarrollada con Laravel y Tailwind CSS.",
+        "image": "/img/project/marketplace-eco-rueda-production.png",
+        "codeUrl": "https://github.com/EMSAREES/marketplace-Eco-Rueda",
+        "demoUrl": "https://marketplace-eco-rueda-production.up.railway.app/",
+        "technologies": ["PHP", "Laravel", "MySQL", "Stripe", "Tailwind CSS"]
+        },
+        {
         "id": "bienesraices",
         "title": "Bienesraices",
         "description": "Un sistema web completo de practica para la gestión de propiedades inmobiliarias desarrollado con PHP siguiendo el patrón MVC (Modelo-Vista-Controlador) y programación orientada a objetos. contiene Bñpg y contacto",
@@ -127,6 +136,15 @@
         "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
         "demoUrl": "https://sketchlibrary.netlify.app/",
         "technologies": ["React", "Tailwind CSS", "Firebase"]
+        },
+        {
+        "id": "marketplace-Eco-Rueda",
+        "title": "Marketplace Eco Rueda",
+        "description": "Plataforma de comercio electrónico enfocada en la venta de sillas ecológicas. Incluye un sistema de carrito de compras dinámico, integración segura con Stripe para pagos en línea y una interfaz moderna desarrollada con Laravel y Tailwind CSS.",
+        "image": "/img/project/marketplace-eco-rueda-production.png",
+        "codeUrl": "https://github.com/EMSAREES/marketplace-Eco-Rueda",
+        "demoUrl": "https://marketplace-eco-rueda-production.up.railway.app/",
+        "technologies": ["PHP", "Laravel", "MySQL", "Stripe", "Tailwind CSS"]
         },
         {
         "id": "bienesraices",
