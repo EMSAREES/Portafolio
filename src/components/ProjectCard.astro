@@ -80,7 +80,7 @@ import translations from "../data/translations.json";
     ))}
 </div>
 
-<script define:vars={{ translations }}>
+<script define:vars={{ translations, projects }}>
   
     // Escuchar cambios de idioma
     document.addEventListener('languageChanged', (event) => {
@@ -93,29 +93,50 @@ import translations from "../data/translations.json";
         const projectCards = document.querySelectorAll('.project-card');
         
         projectCards.forEach((card, index) => {
-            if (projectsData[index]) {
+            if (projectsData && projectsData[index]) {
                 const project = projectsData[index];
                 
                 // Update image
                 const img = card.querySelector('.project-image');
-                img.src = project.image;
-                img.alt = project.title;
+                if (img) {
+                    img.src = project.image;
+                    img.alt = project.title;
+                }
                 
                 // Update title
-                card.querySelector('.project-title').textContent = project.title;
+                const titleEl = card.querySelector('.project-title');
+                if (titleEl) {
+                    titleEl.textContent = project.title;
+                }
                 
                 // Update description
-                card.querySelector('.project-description').textContent = project.description;
+                const descEl = card.querySelector('.project-description');
+                if (descEl) {
+                    descEl.textContent = project.description;
+                }
                 
                 // Update technologies
                 const techContainer = card.querySelector('.project-tech');
-                techContainer.innerHTML = '';
-                project.technologies.slice(0, 3).forEach(tech => {
-                    const badge = document.createElement('span');
-                    badge.className = 'px-3 py-1 bg-cyan-500/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full';
-                    badge.textContent = tech;
-                    techContainer.appendChild(badge);
-                });
+                if (techContainer) {
+                    techContainer.innerHTML = '';
+                    project.technologies.slice(0, 3).forEach(tech => {
+                        const badge = document.createElement('span');
+                        badge.className = 'px-3 py-1 bg-cyan-500/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full';
+                        badge.textContent = tech;
+                        techContainer.appendChild(badge);
+                    });
+                }
+                
+                // Update button labels
+                const codeBtn = card.querySelector('.btn-code');
+                if (codeBtn) {
+                    codeBtn.textContent = translations[lang].projects.viewCode;
+                }
+                
+                const demoBtn = card.querySelector('.btn-demo');
+                if (demoBtn) {
+                    demoBtn.textContent = translations[lang].projects.viewDemo;
+                }
             }
         });
     }

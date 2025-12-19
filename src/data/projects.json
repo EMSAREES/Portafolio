@@ -7,7 +7,7 @@
         "image": "/img/project/guru.png",
         "codeUrl": "",
         "demoUrl": "",
-        "technologies": ["php", "bostrap", "mysql"]
+        "technologies": ["PHP", "Bootstrap", "MySQL"]
         },
         {
         "id": "sketchLibrary",
@@ -30,11 +30,20 @@
         {
         "id": "bienesraices",
         "title": "Bienesraices",
-        "description": "Un sistema web completo de practica para la gestión de propiedades inmobiliarias desarrollado con PHP siguiendo el patrón MVC (Modelo-Vista-Controlador) y programación orientada a objetos. contiene Bñpg y contacto",
+        "description": "Un sistema web completo de práctica para la gestión de propiedades inmobiliarias desarrollado con PHP siguiendo el patrón MVC (Modelo-Vista-Controlador) y programación orientada a objetos. Contiene blog y contacto.",
         "image": "/img/project/bienesRaices.png",
-        "codeUrl": "https://github.com/usuario/astro-bytes",
+        "codeUrl": "https://github.com/EMSAREES/bienesraicesMVC",
         "demoUrl": "",
-        "technologies": ["MYSql", "Php", "JavaScript"]
+        "technologies": ["MySQL", "PHP", "JavaScript"]
+        },
+        {
+            "id": "gestion-de-Gymnasio",
+            "title": "Gestion de Gymnasio",
+            "description": "Gestión de Gimnasio es un sistema integral de escritorio desarrollado en C# con Windows Forms, diseñado para simplificar la administración de gimnasios y mejorar la experiencia de usuarios y personal.",
+            "image": "/img/project/sistema_gym.png",
+            "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
+            "demoUrl": "",
+            "technologies": ["C#", "WinForms", "SQL Server"]
         },
         {
         "id": "project-manager",
@@ -43,7 +52,16 @@
         "image": "/img/project/projectManager.png",
         "codeUrl": "https://github.com/EMSAREES/project-manager",
         "demoUrl": "",
-        "technologies": ["c#", "Winforms"]
+        "technologies": ["C#", "WinForms"]
+        },
+        {
+            "id": "pomodoro",
+            "title": "Time Pomodoro",
+            "description": "Temporizador Pomodoro interactivo que te ayuda a gestionar tu tiempo y aumentar tu productividad. Incluye ciclos de trabajo de 25 minutos, descansos cortos de 5 minutos y descansos largos de 15 minutos. Cuenta con gestión de tareas integrada, diseño minimalista y notificaciones de audio para cada fase del ciclo Pomodoro.",
+            "image": "/img/project/pomodoro.png",
+            "codeUrl": "https://github.com/EMSAREES/pomodoro",
+            "demoUrl": "https://mipomodoroweb.netlify.app/",
+            "technologies": ["React", "JavaScript", "CSS"]
         },
         {
         "id": "simple-Forum",
@@ -52,7 +70,7 @@
         "image": "/img/project/forum.png",
         "codeUrl": "https://github.com/EMSAREES/simple-forum",
         "demoUrl": "",
-        "technologies": ["JavaScript", "TypeScript", "React", "Node Js", "Express", "Postgres"]
+        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "PostgreSQL"]
         },
         {
         "id": "design_festivalMusical",
@@ -64,22 +82,13 @@
         "technologies": ["JavaScript", "HTML", "SASS"]
         },
         {
-        "id": "gestion-de-Gymnasio",
-        "title": "Gestion de Gymnasio",
-        "description": "Gestión de Gimnasio es un sistema integral de escritorio desarrollado en C# con Windows Forms, diseñado para simplificar la administración de gimnasios y mejorar la experiencia de usuarios y personal.",
-        "image": "/img/project/sistema_gym.png",
-        "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
-        "demoUrl": "",
-        "technologies": ["c#", "Winforms", "SQLServer"]
-        },
-        {
         "id": "convertir-imagen-a-texto",
         "title": "Convertir-imagen-a-texto",
         "description": "Convertir Imagen a Texto es una aplicación de escritorio desarrollada en C# con Windows Forms que permite extraer texto de imágenes de manera rápida y sencilla usando OCR (Tesseract). Ideal para digitalizar documentos, capturas de pantalla o cualquier texto contenido en imágenes.",
         "image": "/img/project/cover_text.png",
         "codeUrl": "https://github.com/EMSAREES/convertir-imagen-a-texto",
         "demoUrl": "",
-        "technologies": ["c#", "Winforms "]
+        "technologies": ["C#", "WinForms"]
         },
         {
         "id": "games",
@@ -97,7 +106,7 @@
         "image": "/img/project/Gestor_de_Contraseñas.png",
         "codeUrl": "https://github.com/EMSAREES/Frontend-Password-Crypto?tab=readme-ov-file",
         "demoUrl": "https://keycrypte-descripte.netlify.app/",
-        "technologies": ["React","JavaScript"]
+        "technologies": ["React", "JavaScript"]
         },
         {
         "id": "backend-Password-Crypto",
@@ -106,16 +115,16 @@
         "image": "/img/project/Gestor_de_Contraseñas_Backend.png",
         "codeUrl": "https://github.com/EMSAREES/Backend-Password-Crypto",
         "demoUrl": "",
-        "technologies": ["python"]
+        "technologies": ["Python"]
         },
         {
         "id": "movie-Library",
         "title": "Movie Library",
-        "description": "Movie Library 🎬 Aplicación web ASP.NET Core MVC para explorar películas usando la API de TMDB. Características",
+        "description": "Movie Library 🎬 — Aplicación web ASP.NET Core MVC para explorar películas usando la API de TMDB. Incluye búsqueda, detalles y exploración de películas.",
         "image": "/img/project/movieLibrery.png",
         "codeUrl": "https://github.com/EMSAREES/Movie-Library",
         "demoUrl": "",
-        "technologies": ["c#", "ASP.NET CORE", "API"]
+        "technologies": ["C#", "ASP.NET Core", "API"]
         }
     ],
     "en": [
@@ -140,7 +149,7 @@
         {
         "id": "marketplace-Eco-Rueda",
         "title": "Marketplace Eco Rueda",
-        "description": "Plataforma de comercio electrónico enfocada en la venta de sillas ecológicas. Incluye un sistema de carrito de compras dinámico, integración segura con Stripe para pagos en línea y una interfaz moderna desarrollada con Laravel y Tailwind CSS.",
+        "description": "E-commerce platform focused on selling eco-friendly chairs. Includes a dynamic shopping cart system, secure Stripe integration for online payments, and a modern interface developed with Laravel and Tailwind CSS.",
         "image": "/img/project/marketplace-eco-rueda-production.png",
         "codeUrl": "https://github.com/EMSAREES/marketplace-Eco-Rueda",
         "demoUrl": "https://marketplace-eco-rueda-production.up.railway.app/",
@@ -148,12 +157,21 @@
         },
         {
         "id": "bienesraices",
-        "title": "bienesraices",
+        "title": "Real Estate",
         "description": "A complete web system for managing real estate properties developed with PHP following the MVC (Model-View-Controller) pattern and object-oriented programming. Includes blog and contact section.",
         "image": "/img/project/bienesRaices.png",
-        "codeUrl": "https://github.com/usuario/astro-bytes",
+        "codeUrl": "https://github.com/EMSAREES/bienesraicesMVC",
         "demoUrl": "",
         "technologies": ["MySQL", "PHP", "JavaScript"]
+        },
+        {
+            "id": "gestion-de-Gymnasio",
+            "title": "Gym Management System",
+            "description": "Gym Management is a comprehensive desktop system developed in C# with Windows Forms, designed to simplify gym administration and enhance user and staff experience.",
+            "image": "/img/project/sistema_gym.png",
+            "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
+            "demoUrl": "",
+            "technologies": ["C#", "WinForms", "SQL Server"]
         },
         {
         "id": "project-manager",
@@ -165,13 +183,22 @@
         "technologies": ["C#", "WinForms"]
         },
         {
+            "id": "pomodoro",
+            "title": "Time Pomodoro",
+            "description": "Interactive Pomodoro timer that helps you manage your time and boost productivity. Features 25-minute work cycles, 5-minute short breaks, and 15-minute long breaks. Includes integrated task management, minimalist design, and audio notifications for each phase of the Pomodoro cycle.",
+            "image": "/img/project/pomodoro.png",
+            "codeUrl": "https://github.com/EMSAREES/pomodoro",
+            "demoUrl": "https://mipomodoroweb.netlify.app/",
+            "technologies": ["React", "JavaScript", "CSS"]
+        },
+        {
         "id": "simple-Forum",
         "title": "Simple Forum",
         "description": "Welcome to Simple Forum — a modern web forum project built with React, Express, and a database, inspired by the Dev.to tutorial. This version is more robust and functional, with persistent storage and a full Express backend.",
         "image": "/img/project/forum.png",
         "codeUrl": "https://github.com/EMSAREES/simple-forum",
         "demoUrl": "",
-        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "Postgres"]
+        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "PostgreSQL"]
         },
         {
         "id": "design_festivalMusical",
@@ -181,15 +208,6 @@
         "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
         "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
         "technologies": ["JavaScript", "HTML", "SASS"]
-        },
-        {
-        "id": "gestion-de-Gymnasio",
-        "title": "Gym Management System",
-        "description": "Gym Management is a comprehensive desktop system developed in C# with Windows Forms, designed to simplify gym administration and enhance user and staff experience.",
-        "image": "/img/project/sistema_gym.png",
-        "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
-        "demoUrl": "",
-        "technologies": ["C#", "WinForms", "SQL Server"]
         },
         {
         "id": "convertir-imagen-a-texto",
