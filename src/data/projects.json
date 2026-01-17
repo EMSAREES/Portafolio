@@ -10,6 +10,15 @@
         "technologies": ["PHP", "Bootstrap", "MySQL"]
         },
         {
+        "id": "sistemaDental",
+        "title": "Sistema Dental",
+        "description": "Aplicación de gestión clínica diseñada para consultorios dentales. Permite registrar pacientes, agendar citas, llevar el historial de consultas, gestionar ingresos por cada atención, imprimir tickets de pago y organizar la agenda de manera eficiente. Actualmente en uso en una clínica dental, satisfaciendo las necesidades del dentista y optimizando el flujo de trabajo.",
+        "image": "/img/project/sistemaDental.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", ".NET", "SQLite"]
+        },
+        {
         "id": "sketchLibrary",
         "title": "SketchLibrary",
         "description": "Aplicacion para compartir pdf de dibujo una colecion o biblioteca de descargar material, referencia de dibujo",
@@ -82,15 +91,6 @@
         "technologies": ["JavaScript", "HTML", "SASS"]
         },
         {
-        "id": "convertir-imagen-a-texto",
-        "title": "Convertir-imagen-a-texto",
-        "description": "Convertir Imagen a Texto es una aplicación de escritorio desarrollada en C# con Windows Forms que permite extraer texto de imágenes de manera rápida y sencilla usando OCR (Tesseract). Ideal para digitalizar documentos, capturas de pantalla o cualquier texto contenido en imágenes.",
-        "image": "/img/project/cover_text.png",
-        "codeUrl": "https://github.com/EMSAREES/convertir-imagen-a-texto",
-        "demoUrl": "",
-        "technologies": ["C#", "WinForms"]
-        },
-        {
         "id": "games",
         "title": "Games",
         "description": "Five Play Games es una colección de 5 divertidos juegos web desarrollados con JavaScript, HTML y CSS, diseñada para jugar solo o con amigos directamente desde tu navegador.",
@@ -136,6 +136,15 @@
         "codeUrl": "",
         "demoUrl": "",
         "technologies": ["PHP", "Bootstrap", "MySQL"]
+        },
+        {
+        "id": "sistemaDental",
+        "title": "Dental System",
+        "description": "Clinical management application designed for dental practices. It allows registering patients, scheduling appointments, maintaining consultation records, managing income for each visit, printing payment tickets, and organizing the agenda efficiently. Currently in use at a dental clinic, meeting the dentist's needs and streamlining the workflow.",
+        "image": "/img/project/sistemaDental.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", ".NET", "SQLite"]
         },
         {
         "id": "sketchLibrary",
@@ -208,15 +217,6 @@
         "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
         "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
         "technologies": ["JavaScript", "HTML", "SASS"]
-        },
-        {
-        "id": "convertir-imagen-a-texto",
-        "title": "Image-to-Text Converter",
-        "description": "Image to Text Converter is a desktop application developed in C# with Windows Forms that extracts text from images quickly and easily using OCR (Tesseract). Ideal for digitizing documents, screenshots, or any image text.",
-        "image": "/img/project/cover_text.png",
-        "codeUrl": "https://github.com/EMSAREES/convertir-imagen-a-texto",
-        "demoUrl": "",
-        "technologies": ["C#", "WinForms"]
         },
         {
         "id": "games",
