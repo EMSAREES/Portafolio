@@ -1,9 +1,4 @@
 ---
-// Projects.astro
-// Sección de proyectos.
-// Aquí se leen los datos y se pasan a <Card />, igual que en React
-// cuando mapeas un array y renderizas componentes hijos con props.
-
 import translations from '../data/translations.json';
 import projects     from '../data/projects.json';
 import projectUse   from '../data/projectUse.json'
@@ -11,13 +6,12 @@ import Card         from './Card.astro';
 
 const tr = translations.en;
 const allProjects = projects.en;
-const allprojectUse =  projectUse.en;
+const allprojectUse = projectUse.en;
 ---
 
 <section id="work" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-20 px-6 md:px-10">
   <div class="max-w-7xl w-full">
 
-    <!-- Título de sección -->
     <div class="text-center mb-16">
       <h2 id="projects-title" class="text-5xl md:text-6xl font-bold text-white mb-4 relative inline-block">
         {tr.projects.title}
@@ -25,40 +19,55 @@ const allprojectUse =  projectUse.en;
       </h2>
     </div>
 
-    <!-- Grid de cards -->
-    <div class="space-y-16">
-      <h3 
-        
-        class="text-2xl font-bold text-white flex items-center gap-3 mb-4"
-      >
+    <div class="space-y-10">
+      <h3 class="text-2xl font-bold text-white flex items-center gap-3">
         <span>{tr.projects.secondaryTitleUse}</span>
       </h3>
 
-      <!--Projecto en uso-->
-      <div id="projects-use-card" class="projects-grid flex overflow-x-auto snap-x snap-mandatory scroll-smooth p-4 space-x-4">
-        {allprojectUse.map((project, index) => (
-          <Card
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            badges={project.technologies}
-            codeUrl={project.codeUrl}
-            demoUrl={project.demoUrl}
-            codeLabel={tr.projects.viewCode}
-            demoLabel={tr.projects.viewDemo}
-            index={index}
-            dataId={project.id}
-          />
-        ))}
-      </div>
+      <!-- ── CARRUSEL ─────────────────────────────────────── -->
+      <div class="relative">
 
-      <!-- Aquí es igual que en React: allProjects.map(project => <Card ...props />) -->
-      <h3 
-        id="projects-personal-title"
-        class="text-2xl font-bold text-white flex items-center gap-3 mb-4"
-      >
+        <!-- Track -->
+        <div
+          id="carousel-track"
+          class="flex gap-6 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+        >
+          {allprojectUse.map((project, index) => (
+            <!-- Cada slide: 100% en móvil, 1/3 en desktop -->
+            <div class="carousel-slide flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]">
+              <Card
+                image={project.image}
+                title={project.title}
+                description={project.description}
+                badges={project.technologies}
+                codeUrl={project.codeUrl}
+                demoUrl={project.demoUrl}
+                codeLabel={tr.projects.viewCode}
+                demoLabel={tr.projects.viewDemo}
+                index={index}
+                dataId={project.id}
+              />
+            </div>
+          ))}
+        </div>
+
+        <!-- Dots -->
+        <div id="carousel-dots" class="flex justify-center gap-2 mt-6">
+          {allprojectUse.map((_, i) => (
+            <button
+              class="carousel-dot w-2.5 h-2.5 rounded-full bg-slate-600 transition-all duration-300"
+              data-index={i}
+              aria-label={`Slide ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+      <!-- ── FIN CARRUSEL ────────────────────────────────── -->
+
+      <h3 id="projects-personal-title" class="text-2xl font-bold text-white flex items-center gap-3">
         <span>{tr.projects.secondaryTitlePersonal}</span>
       </h3>
+
       <div id="projects-personal-card" class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-8">
         {allProjects.map((project, index) => (
           <Card
@@ -80,50 +89,186 @@ const allprojectUse =  projectUse.en;
   </div>
 </section>
 
-<script define:vars={{ translations, projects, projectUse }}>
-  // ── Animación al hacer scroll ──────────────────────────────
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0, rootMargin: '0px 0px -50px 0px' }
-  );
-  document.querySelectorAll('.projects-grid .card').forEach(card => observer.observe(card));
+<style is:global>
+  /* Animación solo para cards personales, NO las del carrusel */
+  #projects-personal-card .card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  #projects-personal-card .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-  // ── Actualizar al cambiar idioma ───────────────────────────
+  /* Cards del carrusel siempre visibles */
+  #carousel-track .card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Dot activo */
+  .carousel-dot.active {
+    background-color: #22d3ee;
+    transform: scale(1.3);
+  }
+</style>
+
+<script define:vars={{ translations, projects, projectUse }}>
+
+  // ── CARRUSEL ────────────────────────────────────────────────
+  window.addEventListener('load', () => {
+    const track  = document.getElementById('carousel-track');
+    const dots   = document.querySelectorAll('.carousel-dot');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const total  = slides.length;
+
+    if (!track || total === 0) return;
+
+    const GAP = 24; // gap-6
+
+    // Cuántos slides se ven (1 móvil / 3 desktop)
+    const perView = () => window.innerWidth >= 768 ? 3 : 1;
+
+    // Máximo índice posible
+    const maxIndex = () => Math.max(0, total - perView());
+
+    // Ancho real de UN slide calculado desde el contenedor padre
+    function getSlideWidth() {
+      const pv = perView();
+      const containerWidth = track.parentElement.offsetWidth;
+      // (contenedor - gaps entre slides visibles) / slides visibles + gap
+      return (containerWidth - GAP * (pv - 1)) / pv + GAP;
+    }
+
+    let current   = 0;
+    let autoTimer = null;
+
+    // ── Ir a un slide ────────────────────────────────────────
+    function goTo(index) {
+      current = Math.min(Math.max(index, 0), maxIndex());
+      const sw = getSlideWidth();
+
+      track.style.transition = 'transform 0.5s ease';
+      track.style.transform  = `translateX(-${current * sw}px)`;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i >= current && i < current + perView());
+      });
+    }
+
+    // ── Auto-avance ──────────────────────────────────────────
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => {
+        goTo(current >= maxIndex() ? 0 : current + 1);
+      }, 3000);
+    }
+    function stopAuto() {
+      if (autoTimer) clearInterval(autoTimer);
+    }
+
+    // ── Dots click ───────────────────────────────────────────
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startAuto(); });
+    });
+
+    // ── Drag con mouse ───────────────────────────────────────
+    let dragStart  = 0;
+    let isDragging = false;
+
+    track.addEventListener('mousedown', e => {
+      isDragging = true;
+      dragStart  = e.clientX;
+      stopAuto();
+      track.style.transition = 'none';
+    });
+
+    window.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      const delta = e.clientX - dragStart;
+      track.style.transform = `translateX(${-current * getSlideWidth() + delta}px)`;
+    });
+
+    window.addEventListener('mouseup', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      const delta = e.clientX - dragStart;
+      if (delta < -60)     goTo(current + 1);
+      else if (delta > 60) goTo(current - 1);
+      else                 goTo(current);
+      startAuto();
+    });
+
+    // ── Swipe táctil ────────────────────────────────────────
+    let touchStart = 0;
+
+    track.addEventListener('touchstart', e => {
+      touchStart = e.touches[0].clientX;
+      stopAuto();
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    track.addEventListener('touchmove', e => {
+      const delta = e.touches[0].clientX - touchStart;
+      track.style.transform = `translateX(${-current * getSlideWidth() + delta}px)`;
+    }, { passive: true });
+
+    track.addEventListener('touchend', e => {
+      const delta = e.changedTouches[0].clientX - touchStart;
+      if (delta < -50)     goTo(current + 1);
+      else if (delta > 50) goTo(current - 1);
+      else                 goTo(current);
+      startAuto();
+    });
+
+    // ── Resize ───────────────────────────────────────────────
+    window.addEventListener('resize', () => goTo(Math.min(current, maxIndex())));
+
+    // ── Init ─────────────────────────────────────────────────
+    requestAnimationFrame(() => requestAnimationFrame(() => { goTo(0); startAuto(); }));
+  });
+
+
+  // ── Animación cards personales al hacer scroll ──────────────
+  window.addEventListener('load', () => {
+    const cards = document.querySelectorAll('#projects-personal-card .card');
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      }),
+      { threshold: 0 }
+    );
+    setTimeout(() => cards.forEach(c => observer.observe(c)), 50);
+  });
+
+
+  // ── Cambio de idioma ────────────────────────────────────────
   document.addEventListener('languageChanged', ({ detail: { lang } }) => {
     const tr             = translations[lang];
     const personalData   = projects[lang];
     const productionData = projectUse[lang];
 
-    // Títulos
     const titleEl = document.getElementById('projects-title');
     if (titleEl) titleEl.childNodes[0].textContent = tr.projects.title;
-
-    const useTitle = document.getElementById('projects-use-title');
-    if (useTitle) useTitle.textContent = tr.projects.secondaryTitleUse;
 
     const personalTitle = document.getElementById('projects-personal-title');
     if (personalTitle) personalTitle.querySelector('span').textContent = tr.projects.secondaryTitlePersonal;
 
-    // Cards de producción
-    document.querySelectorAll('#projects-use-card .card').forEach(card => {
+    document.querySelectorAll('.carousel-slide .card').forEach(card => {
       const project = productionData.find(p => p.id === card.dataset.id);
       if (!project) return;
-
       const title = card.querySelector('.card-title');
       if (title) title.textContent = project.title;
-
       const desc = card.querySelector('.card-description');
       if (desc) desc.textContent = project.description;
     });
 
-    // Cards personales
     document.querySelectorAll('#projects-personal-card .card').forEach(card => {
       const project = personalData.find(p => p.id === card.dataset.id);
       if (!project) return;
-
       const title = card.querySelector('.card-title');
       if (title) title.textContent = project.title;
-
       const desc = card.querySelector('.card-description');
       if (desc) desc.textContent = project.description;
     });
