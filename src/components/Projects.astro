@@ -20,21 +20,18 @@ const allprojectUse = projectUse.en;
     </div>
 
     <div class="space-y-10">
-      <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+      <h3 id="projects-Production-title" class="text-2xl font-bold text-white flex items-center gap-3">
         <span>{tr.projects.secondaryTitleUse}</span>
       </h3>
 
-      <!-- ── CARRUSEL ─────────────────────────────────────── -->
-      <div class="relative">
-
-        <!-- Track -->
+      <!-- ── CARRUSEL ─────────────────────────────────── -->
+      <div class="relative w-full overflow-hidden">
         <div
           id="carousel-track"
-          class="flex gap-6 overflow-hidden cursor-grab active:cursor-grabbing select-none"
+          class="flex gap-6 cursor-grab active:cursor-grabbing select-none transition-transform duration-500 ease-out"
         >
           {allprojectUse.map((project, index) => (
-            <!-- Cada slide: 100% en móvil, 1/3 en desktop -->
-            <div class="carousel-slide flex-shrink-0 w-full md:w-[calc(33.333%-1rem)]">
+            <div class="carousel-slide flex-shrink-0 w-full md:w-[calc((100%-48px)/3)]">
               <Card
                 image={project.image}
                 title={project.title}
@@ -48,17 +45,6 @@ const allprojectUse = projectUse.en;
                 dataId={project.id}
               />
             </div>
-          ))}
-        </div>
-
-        <!-- Dots -->
-        <div id="carousel-dots" class="flex justify-center gap-2 mt-6">
-          {allprojectUse.map((_, i) => (
-            <button
-              class="carousel-dot w-2.5 h-2.5 rounded-full bg-slate-600 transition-all duration-300"
-              data-index={i}
-              aria-label={`Slide ${i + 1}`}
-            />
           ))}
         </div>
       </div>
@@ -125,35 +111,29 @@ const allprojectUse = projectUse.en;
 
     if (!track || total === 0) return;
 
-    const GAP = 24; // gap-6
-
-    // Cuántos slides se ven (1 móvil / 3 desktop)
     const perView = () => window.innerWidth >= 768 ? 3 : 1;
-
-    // Máximo índice posible
     const maxIndex = () => Math.max(0, total - perView());
 
-    // Ancho real de UN slide calculado desde el contenedor padre
     function getSlideWidth() {
-      const pv = perView();
-      const containerWidth = track.parentElement.offsetWidth;
-      // (contenedor - gaps entre slides visibles) / slides visibles + gap
-      return (containerWidth - GAP * (pv - 1)) / pv + GAP;
+      const slide = slides[0];
+      if (!slide) return 0;
+      const gap = parseInt(window.getComputedStyle(track).gap) || 0;
+      return slide.getBoundingClientRect().width + gap;
     }
 
     let current   = 0;
     let autoTimer = null;
 
-    // ── Ir a un slide ────────────────────────────────────────
     function goTo(index) {
       current = Math.min(Math.max(index, 0), maxIndex());
       const sw = getSlideWidth();
 
-      track.style.transition = 'transform 0.5s ease';
+      track.style.transition = 'transform 0.5s ease-out';
       track.style.transform  = `translateX(-${current * sw}px)`;
 
       dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i >= current && i < current + perView());
+        const isActive = (perView() === 1) ? (i === current) : (i >= current && i < current + perView());
+        dot.classList.toggle('active', isActive);
       });
     }
 
@@ -223,10 +203,15 @@ const allprojectUse = projectUse.en;
     });
 
     // ── Resize ───────────────────────────────────────────────
-    window.addEventListener('resize', () => goTo(Math.min(current, maxIndex())));
+    window.addEventListener('resize', () => {
+      goTo(Math.min(current, maxIndex()));
+    });
 
     // ── Init ─────────────────────────────────────────────────
-    requestAnimationFrame(() => requestAnimationFrame(() => { goTo(0); startAuto(); }));
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      goTo(0);
+      startAuto();
+    }));
   });
 
 
@@ -254,6 +239,9 @@ const allprojectUse = projectUse.en;
 
     const personalTitle = document.getElementById('projects-personal-title');
     if (personalTitle) personalTitle.querySelector('span').textContent = tr.projects.secondaryTitlePersonal;
+
+    const productionTitle = document.getElementById('projects-Production-title');
+    if (productionTitle) productionTitle.querySelector('span').textContent = tr.projects.secondaryTitleUse;
 
     document.querySelectorAll('.carousel-slide .card').forEach(card => {
       const project = productionData.find(p => p.id === card.dataset.id);
