@@ -1,22 +1,28 @@
 ---
-import "../styles/globales.css";
+// pages/index.astro
+// Esta es la única página.
+// Solo importa componentes y los pone en orden, igual que en React
+// cuando tienes un App.jsx que solo ensambla secciones.
 
-import Layout from '../layouts/Layout.astro';
+import Layout   from '../layouts/Layout.astro';
 
+import Header   from '../components/Header.astro';
+import Hero     from '../components/Hero.astro';
+import About    from '../components/About.astro';
+import Projects from '../components/Projects.astro';
+import Contact  from '../components/Contact.astro';
 
-import LandingHeader from "../components/LandingHeader.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Contact from "../components/Contact.astro";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// ¿Quieres agregar una nueva sección? Solo:
+// 1. Crea el componente en /components
+// 2. Impórtalo aquí
+// 3. Agrégalo abajo
 ---
 
-<Layout>
-    <LandingHeader />
-    <main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
-        <!-- primera seccion vienbenida -->
+<Layout title="Portafolio — Emilio R.">
+  <Header />
+
+  <main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
+    <!-- primera seccion vienbenida -->
         <div class="snap-center">
             <Hero />
         </div>
@@ -35,6 +41,6 @@ import Contact from "../components/Contact.astro";
         <div class="snap-center">
             <Contact />
         </div>
-    </main>
-    
+  </main>
+
 </Layout>

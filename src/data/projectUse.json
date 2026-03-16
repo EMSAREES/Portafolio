@@ -1,0 +1,42 @@
+{
+    "es": [
+        {
+        "id": "guruvirtualschool",
+        "title": "guruvirtualschool",
+        "description": "Paguina de curso ayude a implementar mejora del lado del alumno como barra de progreso y diseño y implementar metodo de pago con stripe",
+        "image": "/img/project/guru.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["PHP", "Bootstrap", "MySQL"]
+        },
+        {
+        "id": "sistemaDental",
+        "title": "Sistema Dental",
+        "description": "Aplicación de gestión clínica diseñada para consultorios dentales. Permite registrar pacientes, agendar citas, llevar el historial de consultas, gestionar ingresos por cada atención, imprimir tickets de pago y organizar la agenda de manera eficiente. Actualmente en uso en una clínica dental, satisfaciendo las necesidades del dentista y optimizando el flujo de trabajo.",
+        "image": "/img/project/sistemaDental.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", ".NET", "SQLite"]
+        }
+    ],
+    "en": [
+        {
+        "id": "guruvirtualschool",
+        "title": "Guru Virtual School",
+        "description": "Course platform where I helped implement improvements on the student side such as a progress bar, visual design, and integrated a payment method with Stripe.",
+        "image": "/img/project/guru.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["PHP", "Bootstrap", "MySQL"]
+        },
+        {
+        "id": "sistemaDental",
+        "title": "Dental System",
+        "description": "Clinical management application designed for dental practices. It allows registering patients, scheduling appointments, maintaining consultation records, managing income for each visit, printing payment tickets, and organizing the agenda efficiently. Currently in use at a dental clinic, meeting the dentist's needs and streamlining the workflow.",
+        "image": "/img/project/sistemaDental.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", ".NET", "SQLite"]
+        }
+    ]
+}

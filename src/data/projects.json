@@ -1,24 +1,6 @@
 {
     "es": [
         {
-        "id": "guruvirtualschool",
-        "title": "guruvirtualschool",
-        "description": "Paguina de curso ayude a implementar mejora del lado del alumno como barra de progreso y diseño y implementar metodo de pago con stripe",
-        "image": "/img/project/guru.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["PHP", "Bootstrap", "MySQL"]
-        },
-        {
-        "id": "sistemaDental",
-        "title": "Sistema Dental",
-        "description": "Aplicación de gestión clínica diseñada para consultorios dentales. Permite registrar pacientes, agendar citas, llevar el historial de consultas, gestionar ingresos por cada atención, imprimir tickets de pago y organizar la agenda de manera eficiente. Actualmente en uso en una clínica dental, satisfaciendo las necesidades del dentista y optimizando el flujo de trabajo.",
-        "image": "/img/project/sistemaDental.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", ".NET", "SQLite"]
-        },
-        {
         "id": "sketchLibrary",
         "title": "SketchLibrary",
         "description": "Aplicacion para compartir pdf de dibujo una colecion o biblioteca de descargar material, referencia de dibujo",
@@ -100,22 +82,13 @@
         "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
-        "id": "frontend-Password-Crypto",
-        "title": "Frontend-Password-Crypto",
-        "description": "Frontend Password Crypto es una aplicación web desarrollada con React que permite cifrar y descifrar contraseñas de manera segura directamente desde tu navegador. Es ideal para practicar criptografía básica y proteger información sensible de forma rápida y sencilla.",
+        "id": "Password-Crypto",
+        "title": "Password Crypto",
+        "description": "Password Crypto es una solución completa que integra un frontend en React y un backend con API segura basada en AES-256-CBC. Desde el navegador puedes cifrar y descifrar contraseñas de manera rápida y sencilla, mientras que la API garantiza la confidencialidad y protección de datos sensibles para aplicaciones web o móviles. Ideal para practicar criptografía básica y asegurar información privada con un flujo seguro y profesional.",
         "image": "/img/project/Gestor_de_Contraseñas.png",
-        "codeUrl": "https://github.com/EMSAREES/Frontend-Password-Crypto?tab=readme-ov-file",
+        "codeUrl": "https://github.com/EMSAREES/Generador-de-Claves-Cifrador-y-Descifrador",
         "demoUrl": "https://keycrypte-descripte.netlify.app/",
-        "technologies": ["React", "JavaScript"]
-        },
-        {
-        "id": "backend-Password-Crypto",
-        "title": "Backend-Password-Crypto",
-        "description": "Backend Password Crypto es una API segura diseñada para cifrar y descifrar texto utilizando el algoritmo AES-256-CBC, garantizando la confidencialidad y protección de información sensible. Esta API es ideal para integrarse en aplicaciones web o móviles que necesiten seguridad en el manejo de contraseñas o datos privados.",
-        "image": "/img/project/Gestor_de_Contraseñas_Backend.png",
-        "codeUrl": "https://github.com/EMSAREES/Backend-Password-Crypto",
-        "demoUrl": "",
-        "technologies": ["Python"]
+        "technologies": ["React", "JavaScript", "Python", "Flask"]
         },
         {
         "id": "movie-Library",
@@ -128,24 +101,6 @@
         }
     ],
     "en": [
-        {
-        "id": "guruvirtualschool",
-        "title": "Guru Virtual School",
-        "description": "Course platform where I helped implement improvements on the student side such as a progress bar, visual design, and integrated a payment method with Stripe.",
-        "image": "/img/project/guru.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["PHP", "Bootstrap", "MySQL"]
-        },
-        {
-        "id": "sistemaDental",
-        "title": "Dental System",
-        "description": "Clinical management application designed for dental practices. It allows registering patients, scheduling appointments, maintaining consultation records, managing income for each visit, printing payment tickets, and organizing the agenda efficiently. Currently in use at a dental clinic, meeting the dentist's needs and streamlining the workflow.",
-        "image": "/img/project/sistemaDental.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", ".NET", "SQLite"]
-        },
         {
         "id": "sketchLibrary",
         "title": "SketchLibrary",
@@ -228,22 +183,13 @@
         "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
-        "id": "frontend-Password-Crypto",
-        "title": "Frontend Password Crypto",
-        "description": "Frontend Password Crypto is a web app built with React that allows secure password encryption and decryption directly in your browser. Ideal for practicing basic cryptography and protecting sensitive information quickly and easily.",
+        "id": "Password-Crypto",
+        "title": "Password Crypto",
+        "description": "Password Crypto is a complete solution that integrates a React-based frontend with a secure backend API using AES-256-CBC. From the browser, you can quickly and easily encrypt and decrypt passwords, while the API ensures confidentiality and protection of sensitive data for web or mobile applications. It is ideal for practicing basic cryptography and safeguarding private information with a secure and professional workflow.",
         "image": "/img/project/Gestor_de_Contraseñas.png",
-        "codeUrl": "https://github.com/EMSAREES/Frontend-Password-Crypto?tab=readme-ov-file",
+        "codeUrl": "https://github.com/EMSAREES/Generador-de-Claves-Cifrador-y-Descifrador",
         "demoUrl": "https://keycrypte-descripte.netlify.app/",
-        "technologies": ["React", "JavaScript"]
-        },
-        {
-        "id": "backend-Password-Crypto",
-        "title": "Backend Password Crypto",
-        "description": "Backend Password Crypto is a secure API designed to encrypt and decrypt text using the AES-256-CBC algorithm, ensuring confidentiality and data protection. Ideal for integration into web or mobile apps that require password or sensitive data security.",
-        "image": "/img/project/Gestor_de_Contraseñas_Backend.png",
-        "codeUrl": "https://github.com/EMSAREES/Backend-Password-Crypto",
-        "demoUrl": "",
-        "technologies": ["Python"]
+        "technologies": ["React", "JavaScript",  "Python", "Flask"]
         },
         {
         "id": "movie-Library",
