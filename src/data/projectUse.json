@@ -17,6 +17,15 @@
         "codeUrl": "",
         "demoUrl": "",
         "technologies": ["C#", ".NET", "SQLite"]
+        },
+        {
+        "id": "sistemaVeterinaria",
+        "title": "Sistema Veterinaria",
+        "description": "Aplicación de escritorio desarrollada en WPF y SQLite para la gestión integral de una clínica veterinaria. Permite administrar clientes, mascotas y citas, así como registrar historiales clínicos, servicios médicos, análisis y tratamientos. Incluye control de servicios pendientes, facturación e historial detallado por mascota, facilitando el flujo de trabajo desde la recepción hasta la atención médica.",
+        "image": "/img/project/sistemaVeterinaria.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", "WPF", ".NET", "SQLite"]
         }
     ],
     "en": [
@@ -37,6 +46,15 @@
         "codeUrl": "",
         "demoUrl": "",
         "technologies": ["C#", ".NET", "SQLite"]
+        },
+        {
+        "id": "sistemaVeterinaria",
+        "title": "Veterinary Management System",
+        "description": "Desktop application developed with WPF and SQLite for comprehensive veterinary clinic management. It allows managing clients, pets, and appointments, as well as recording medical histories, services, analyses, and treatments. It includes pending service tracking, billing, and detailed pet history, streamlining the workflow from reception to medical care.",
+        "image": "/img/project/sistemaVeterinaria.png",
+        "codeUrl": "",
+        "demoUrl": "",
+        "technologies": ["C#", "WPF", ".NET", "SQLite"]
         }
     ]
 }
