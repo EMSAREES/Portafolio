@@ -10,6 +10,15 @@
         "technologies": ["React", "Tailwind CSS", "Firebase"]
         },
         {
+        "id": "fakeShop",
+        "title": "FakeShop",
+        "description": "Aplicación de comercio electrónico desarrollada en Angular para comprender los fundamentos del framework y el consumo de APIs. Integra la API de FakeShop y ofrece tanto una interfaz pública para usuarios como un panel administrativo con dashboard para la gestión de productos y pedidos.",
+        "image": "/img/project/fakeShop.png",
+        "codeUrl": "https://github.com/EMSAREES/FakeShop",
+        "demoUrl": "fakeshop-angular.netlify.app",
+        "technologies": ["Angular", "TypeScript", "SASS"]
+        },
+        {
         "id": "marketplace-Eco-Rueda",
         "title": "Marketplace Eco Rueda",
         "description": "Plataforma de comercio electrónico enfocada en la venta de sillas ecológicas. Incluye un sistema de carrito de compras dinámico, integración segura con Stripe para pagos en línea y una interfaz moderna desarrollada con Laravel y Tailwind CSS.",
@@ -100,6 +109,7 @@
         "technologies": ["C#", "ASP.NET Core", "API"]
         }
     ],
+
     "en": [
         {
         "id": "sketchLibrary",
@@ -109,6 +119,15 @@
         "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
         "demoUrl": "https://sketchlibrary.netlify.app/",
         "technologies": ["React", "Tailwind CSS", "Firebase"]
+        },
+        {
+        "id": "fakeShop",
+        "title": "FakeShop",
+        "description": "E-commerce application built with Angular to explore the fundamentals of the framework and API integration. It consumes the FakeShop API and provides both a public storefront for users and an administrative dashboard for managing products and orders.",
+        "image": "/img/project/fakeShop.png",
+        "codeUrl": "https://github.com/EMSAREES/FakeShop",
+        "demoUrl": "https://fakeshop-angular.netlify.app",
+        "technologies": ["Angular", "TypeScript", "SASS"]
         },
         {
         "id": "marketplace-Eco-Rueda",

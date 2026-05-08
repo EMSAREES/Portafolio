@@ -25,7 +25,7 @@
         "projects": {
             "title": "Mi Trabajo",
             "viewCode": "Código ",
-            "viewDemo": "Demo",
+            "viewDemo": "Acceder",
             "secondaryTitleUse": "Proyectos en producción",
             "secondaryTitlePersonal": "Proyectos personales"
         },
@@ -66,7 +66,7 @@
         "projects": {
             "title": "My Work",
             "viewCode": "Code",
-            "viewDemo": "Demo",
+            "viewDemo": "Access",
             "secondaryTitleUse": "Production Projects",
             "secondaryTitlePersonal": "Personal Projects"
         },

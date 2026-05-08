@@ -26,8 +26,18 @@
         "codeUrl": "",
         "demoUrl": "",
         "technologies": ["C#", "WPF", ".NET", "SQLite"]
+        },
+        {
+        "id": "redMundialDeJovenesAcademicos",
+        "title": "Red Mundial de Jóvenes Académicos",
+        "description": "Sitio web sin fines de lucro desarrollado para una organización en Ecuador. Su propósito es conectar y promover la colaboración entre jóvenes académicos a nivel internacional, ofreciendo información institucional, recursos de investigación y espacios de difusión de actividades académicas.",
+        "image": "/img/project/red_mundial_jovenes_academicos.png",
+        "codeUrl": "",
+        "demoUrl": "https://rmjovenesacademicos.com/",
+        "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
         }
     ],
+
     "en": [
         {
         "id": "guruvirtualschool",
@@ -55,6 +65,15 @@
         "codeUrl": "",
         "demoUrl": "",
         "technologies": ["C#", "WPF", ".NET", "SQLite"]
+        },
+        {
+        "id": "redMundialDeJovenesAcademicos",
+        "title": "World Network of Young Academics",
+        "description": "Non-profit website developed for an organization in Ecuador. Its mission is to connect and promote collaboration among young academics worldwide, providing institutional information, research resources, and spaces to share academic activities.",
+        "image": "/img/project/red_mundial_jovenes_academicos.png",
+        "codeUrl": "",
+        "demoUrl": "https://rmjovenesacademicos.com/",
+        "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
         }
     ]
 }
