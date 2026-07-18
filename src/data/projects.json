@@ -64,15 +64,6 @@
             "technologies": ["React", "JavaScript", "CSS"]
         },
         {
-        "id": "simple-Forum",
-        "title": "Simple Forum",
-        "description": "Bienvenido a Simple Forum, un proyecto de foro web moderno construido con React, Express y base de datos, inspirado en el tutorial de Dev.to . Esta versión es más robusta y funcional, permitiendo almacenamiento persistente y un backend completo con Express.",
-        "image": "/img/project/forum.png",
-        "codeUrl": "https://github.com/EMSAREES/simple-forum",
-        "demoUrl": "",
-        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "PostgreSQL"]
-        },
-        {
         "id": "design_festivalMusical",
         "title": "Design festivalMusical",
         "description": "¡Bienvenido a Design Festival Musical! Un proyecto creativo que combina el arte del diseño gráfico con la energía vibrante de la música. Este repositorio contiene una serie de diseños visuales inspirados en festivales musicales, ideales para promocionar eventos, conciertos y festivales en plataformas digitales",
@@ -173,15 +164,6 @@
             "codeUrl": "https://github.com/EMSAREES/pomodoro",
             "demoUrl": "https://mipomodoroweb.netlify.app/",
             "technologies": ["React", "JavaScript", "CSS"]
-        },
-        {
-        "id": "simple-Forum",
-        "title": "Simple Forum",
-        "description": "Welcome to Simple Forum — a modern web forum project built with React, Express, and a database, inspired by the Dev.to tutorial. This version is more robust and functional, with persistent storage and a full Express backend.",
-        "image": "/img/project/forum.png",
-        "codeUrl": "https://github.com/EMSAREES/simple-forum",
-        "demoUrl": "",
-        "technologies": ["JavaScript", "TypeScript", "React", "Node.js", "Express", "PostgreSQL"]
         },
         {
         "id": "design_festivalMusical",
