@@ -1,73 +1,168 @@
 ---
+// Projects.astro
+// Producción = un carrusel grande y llamativo (una sola imagen a
+// pantalla completa con título superpuesto, como en la referencia).
+// Personales = mini-tarjetas compactas en grid, peso visual menor.
 import translations from '../data/translations.json';
 import projects     from '../data/projects.json';
-import projectUse   from '../data/projectUse.json'
-import Card         from './Card.astro';
+import projectUse   from '../data/projectUse.json';
 
-const tr = translations.en;
-const allProjects = projects.en;
-const allprojectUse = projectUse.en;
+const tr = translations.es;
+const allProjects   = projects.es;
+const allProjectUse = projectUse.es;
 ---
 
-<section id="work" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 py-20 px-6 md:px-10">
-  <div class="max-w-7xl w-full">
+<section id="work" class="min-h-screen flex items-center justify-center bg-ink-950 py-24 px-6 md:px-10">
+  <div class="max-w-6xl w-full">
 
-    <div class="text-center mb-16">
-      <h2 id="projects-title" class="text-5xl md:text-6xl font-bold text-white mb-4 relative inline-block">
-        {tr.projects.title}
-        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></span>
-      </h2>
+    <div class="mb-14">
+      <span class="section-label text-sm font-mono block mb-3">work</span>
+      <div class="relative inline-block">
+        <h2 data-i18n="projects.title" class="text-4xl md:text-5xl font-display font-semibold text-paper-50">
+          {tr.projects.title}
+        </h2>
+        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-accent-400 to-coral-500 rounded-full"></span>
+      </div>
     </div>
 
-    <div class="space-y-10">
-      <h3 id="projects-Production-title" class="text-2xl font-bold text-white flex items-center gap-3">
-        <span>{tr.projects.secondaryTitleUse}</span>
+    <!-- ══════════ DESTACADO: proyectos en producción ══════════ -->
+    <div class="mb-24">
+      <h3 class="flex items-center gap-2 text-sm font-mono text-accent-400 mb-5">
+        <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+        <span data-i18n="projects.secondaryTitleUse">{tr.projects.secondaryTitleUse}</span>
       </h3>
 
-      <!-- ── CARRUSEL ─────────────────────────────────── -->
-      <div class="relative w-full overflow-hidden">
-        <div
-          id="carousel-track"
-          class="flex gap-6 cursor-grab active:cursor-grabbing select-none transition-transform duration-500 ease-out"
-        >
-          {allprojectUse.map((project, index) => (
-            <div class="carousel-slide flex-shrink-0 w-full md:w-[calc((100%-48px)/3)]">
-              <Card
-                image={project.image}
-                title={project.title}
-                description={project.description}
-                badges={project.technologies}
-                codeUrl={project.codeUrl}
-                demoUrl={project.demoUrl}
-                codeLabel={tr.projects.viewCode}
-                demoLabel={tr.projects.viewDemo}
-                index={index}
-                dataId={project.id}
-              />
-            </div>
+      <div class="relative">
+        <div id="featured-viewport" class="overflow-hidden rounded-2xl border border-ink-600">
+          <div id="featured-track" class="flex transition-transform duration-500 ease-out">
+            {allProjectUse.map((project) => (
+              <div class="featured-slide w-full shrink-0" data-id={project.id}>
+                <div class="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] bg-ink-900">
+                  <img src={project.image} alt={project.title} class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/50 to-transparent"></div>
+
+                  <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8 md:p-10 space-y-3">
+                    {project.technologies?.length > 0 && (
+                      <div class="flex flex-wrap gap-2">
+                        {project.technologies.slice(0, 4).map((tech) => (
+                          <span class="px-3 py-1 bg-accent-500/90 text-ink-950 text-xs font-semibold rounded-full">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <h4 class="featured-title text-2xl sm:text-3xl md:text-4xl font-display font-semibold text-paper-50">
+                      {project.title}
+                    </h4>
+
+                    <p class="featured-desc text-paper-300 text-sm md:text-base max-w-2xl line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    <div class="flex gap-3 pt-2">
+                      {project.codeUrl && (
+                        <a href={project.codeUrl} target="_blank" rel="noopener noreferrer"
+                          class="p-2.5 bg-ink-950/70 backdrop-blur-sm border border-ink-600 rounded-full hover:border-accent-500 hover:text-accent-400 transition-colors"
+                          aria-label="Código">
+                          <svg class="w-4 h-4 text-paper-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer"
+                          class="flex items-center gap-2 pl-4 pr-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-ink-950 text-sm font-semibold rounded-full transition-colors">
+                          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                          </svg>
+                          <span data-i18n="projects.viewDemo">{tr.projects.viewDemo}</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {allProjectUse.length > 1 && (
+          <>
+            <button id="featured-prev" aria-label="Anterior"
+              class="absolute left-3 top-1/2 -translate-y-1/2 p-2 bg-ink-950/70 backdrop-blur-sm border border-ink-600 rounded-full hover:border-accent-500 hover:text-accent-400 text-paper-300 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <button id="featured-next" aria-label="Siguiente"
+              class="absolute right-3 top-1/2 -translate-y-1/2 p-2 bg-ink-950/70 backdrop-blur-sm border border-ink-600 rounded-full hover:border-accent-500 hover:text-accent-400 text-paper-300 transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </>
+        )}
+      </div>
+
+      {allProjectUse.length > 1 && (
+        <div id="featured-dots" class="flex justify-center gap-2 mt-5">
+          {allProjectUse.map((_, i) => (
+            <button
+              class="featured-dot h-1.5 rounded-full bg-ink-600 transition-all duration-300"
+              style="width: 24px;"
+              data-index={i}
+              aria-label={`Ir al proyecto ${i + 1}`}
+            ></button>
           ))}
         </div>
-      </div>
-      <!-- ── FIN CARRUSEL ────────────────────────────────── -->
+      )}
+    </div>
 
-      <h3 id="projects-personal-title" class="text-2xl font-bold text-white flex items-center gap-3">
-        <span>{tr.projects.secondaryTitlePersonal}</span>
+    <!-- ══════════ SECUNDARIO: proyectos personales ══════════ -->
+    <div>
+      <h3 class="text-sm font-mono text-paper-300 mb-5" data-i18n="projects.secondaryTitlePersonal">
+        {tr.projects.secondaryTitlePersonal}
       </h3>
 
-      <div id="projects-personal-card" class="projects-grid grid grid-cols-1 md:grid-cols-2 gap-8">
-        {allProjects.map((project, index) => (
-          <Card
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            badges={project.technologies}
-            codeUrl={project.codeUrl}
-            demoUrl={project.demoUrl}
-            codeLabel={tr.projects.viewCode}
-            demoLabel={tr.projects.viewDemo}
-            index={index}
-            dataId={project.id}
-          />
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {allProjects.map((project) => (
+          <div class="mini-card group ink-card p-3 flex gap-4" data-id={project.id}>
+            <div class="w-20 h-20 rounded-lg overflow-hidden bg-ink-950 shrink-0">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="min-w-0 flex-1 flex flex-col">
+              <h4 class="mini-title text-paper-50 font-semibold text-sm truncate group-hover:text-accent-400 transition-colors">
+                {project.title}
+              </h4>
+              <p class="mini-desc text-paper-300 text-xs line-clamp-2 mt-1 flex-1">
+                {project.description}
+              </p>
+              <div class="flex gap-3 mt-2">
+                {project.codeUrl && (
+                  <a href={project.codeUrl} target="_blank" rel="noopener noreferrer"
+                    class="text-paper-300 hover:text-accent-400 transition-colors" aria-label="Código">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  </a>
+                )}
+                {project.demoUrl && (
+                  <a href={project.demoUrl} target="_blank" rel="noopener noreferrer"
+                    class="text-paper-300 hover:text-accent-400 transition-colors" aria-label="Demo">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </div>
@@ -75,189 +170,91 @@ const allprojectUse = projectUse.en;
   </div>
 </section>
 
-<style is:global>
-  /* Animación solo para cards personales, NO las del carrusel */
-  #projects-personal-card .card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
-  #projects-personal-card .card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Cards del carrusel siempre visibles */
-  #carousel-track .card {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* Dot activo */
-  .carousel-dot.active {
-    background-color: #22d3ee;
-    transform: scale(1.3);
+  .featured-dot.active {
+    background-color: var(--color-accent-400);
   }
 </style>
 
 <script define:vars={{ translations, projects, projectUse }}>
-
-  // ── CARRUSEL ────────────────────────────────────────────────
   window.addEventListener('load', () => {
-    const track  = document.getElementById('carousel-track');
-    const dots   = document.querySelectorAll('.carousel-dot');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const total  = slides.length;
+    // ── Carrusel destacado (1 slide a la vez) ─────────────────
+    const viewport = document.getElementById('featured-viewport');
+    const track    = document.getElementById('featured-track');
+    const slides   = document.querySelectorAll('.featured-slide');
+    const dots     = document.querySelectorAll('.featured-dot');
+    const prevBtn  = document.getElementById('featured-prev');
+    const nextBtn  = document.getElementById('featured-next');
+    const total    = slides.length;
 
-    if (!track || total === 0) return;
+    if (track && total > 0) {
+      let current = 0;
+      let autoTimer = null;
 
-    const perView = () => window.innerWidth >= 768 ? 3 : 1;
-    const maxIndex = () => Math.max(0, total - perView());
+      function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
+      }
 
-    function getSlideWidth() {
-      const slide = slides[0];
-      if (!slide) return 0;
-      const gap = parseInt(window.getComputedStyle(track).gap) || 0;
-      return slide.getBoundingClientRect().width + gap;
-    }
+      function startAuto() {
+        stopAuto();
+        if (total > 1) autoTimer = setInterval(() => goTo(current + 1), 5000);
+      }
+      function stopAuto() {
+        if (autoTimer) clearInterval(autoTimer);
+      }
 
-    let current   = 0;
-    let autoTimer = null;
-
-    function goTo(index) {
-      current = Math.min(Math.max(index, 0), maxIndex());
-      const sw = getSlideWidth();
-
-      track.style.transition = 'transform 0.5s ease-out';
-      track.style.transform  = `translateX(-${current * sw}px)`;
-
-      dots.forEach((dot, i) => {
-        const isActive = (perView() === 1) ? (i === current) : (i >= current && i < current + perView());
-        dot.classList.toggle('active', isActive);
+      prevBtn?.addEventListener('click', () => { goTo(current - 1); startAuto(); });
+      nextBtn?.addEventListener('click', () => { goTo(current + 1); startAuto(); });
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startAuto(); });
       });
-    }
 
-    // ── Auto-avance ──────────────────────────────────────────
-    function startAuto() {
-      stopAuto();
-      autoTimer = setInterval(() => {
-        goTo(current >= maxIndex() ? 0 : current + 1);
-      }, 3000);
-    }
-    function stopAuto() {
-      if (autoTimer) clearInterval(autoTimer);
-    }
+      // Swipe táctil
+      let touchStart = 0;
+      viewport?.addEventListener('touchstart', (e) => {
+        touchStart = e.touches[0].clientX;
+        stopAuto();
+      }, { passive: true });
+      viewport?.addEventListener('touchend', (e) => {
+        const delta = e.changedTouches[0].clientX - touchStart;
+        if (delta < -50)      goTo(current + 1);
+        else if (delta > 50)  goTo(current - 1);
+        startAuto();
+      });
 
-    // ── Dots click ───────────────────────────────────────────
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startAuto(); });
-    });
-
-    // ── Drag con mouse ───────────────────────────────────────
-    let dragStart  = 0;
-    let isDragging = false;
-
-    track.addEventListener('mousedown', e => {
-      isDragging = true;
-      dragStart  = e.clientX;
-      stopAuto();
-      track.style.transition = 'none';
-    });
-
-    window.addEventListener('mousemove', e => {
-      if (!isDragging) return;
-      const delta = e.clientX - dragStart;
-      track.style.transform = `translateX(${-current * getSlideWidth() + delta}px)`;
-    });
-
-    window.addEventListener('mouseup', e => {
-      if (!isDragging) return;
-      isDragging = false;
-      const delta = e.clientX - dragStart;
-      if (delta < -60)     goTo(current + 1);
-      else if (delta > 60) goTo(current - 1);
-      else                 goTo(current);
-      startAuto();
-    });
-
-    // ── Swipe táctil ────────────────────────────────────────
-    let touchStart = 0;
-
-    track.addEventListener('touchstart', e => {
-      touchStart = e.touches[0].clientX;
-      stopAuto();
-      track.style.transition = 'none';
-    }, { passive: true });
-
-    track.addEventListener('touchmove', e => {
-      const delta = e.touches[0].clientX - touchStart;
-      track.style.transform = `translateX(${-current * getSlideWidth() + delta}px)`;
-    }, { passive: true });
-
-    track.addEventListener('touchend', e => {
-      const delta = e.changedTouches[0].clientX - touchStart;
-      if (delta < -50)     goTo(current + 1);
-      else if (delta > 50) goTo(current - 1);
-      else                 goTo(current);
-      startAuto();
-    });
-
-    // ── Resize ───────────────────────────────────────────────
-    window.addEventListener('resize', () => {
-      goTo(Math.min(current, maxIndex()));
-    });
-
-    // ── Init ─────────────────────────────────────────────────
-    requestAnimationFrame(() => requestAnimationFrame(() => {
       goTo(0);
       startAuto();
-    }));
+    }
   });
 
-
-  // ── Animación cards personales al hacer scroll ──────────────
-  window.addEventListener('load', () => {
-    const cards = document.querySelectorAll('#projects-personal-card .card');
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      }),
-      { threshold: 0 }
-    );
-    setTimeout(() => cards.forEach(c => observer.observe(c)), 50);
-  });
-
-
-  // ── Cambio de idioma ────────────────────────────────────────
+  // ── Cambio de idioma ─────────────────────────────────────────
   document.addEventListener('languageChanged', ({ detail: { lang } }) => {
-    const tr             = translations[lang];
-    const personalData   = projects[lang];
     const productionData = projectUse[lang];
+    const personalData   = projects[lang];
 
-    const titleEl = document.getElementById('projects-title');
-    if (titleEl) titleEl.childNodes[0].textContent = tr.projects.title;
-
-    const personalTitle = document.getElementById('projects-personal-title');
-    if (personalTitle) personalTitle.querySelector('span').textContent = tr.projects.secondaryTitlePersonal;
-
-    const productionTitle = document.getElementById('projects-Production-title');
-    if (productionTitle) productionTitle.querySelector('span').textContent = tr.projects.secondaryTitleUse;
-
-    document.querySelectorAll('.carousel-slide .card').forEach(card => {
-      const project = productionData.find(p => p.id === card.dataset.id);
+    document.querySelectorAll('.featured-slide').forEach((slide) => {
+      const project = productionData.find((p) => p.id === slide.dataset.id);
       if (!project) return;
-      const title = card.querySelector('.card-title');
+      const title = slide.querySelector('.featured-title');
       if (title) title.textContent = project.title;
-      const desc = card.querySelector('.card-description');
+      const desc = slide.querySelector('.featured-desc');
       if (desc) desc.textContent = project.description;
     });
 
-    document.querySelectorAll('#projects-personal-card .card').forEach(card => {
-      const project = personalData.find(p => p.id === card.dataset.id);
+    document.querySelectorAll('.mini-card').forEach((card) => {
+      const project = personalData.find((p) => p.id === card.dataset.id);
       if (!project) return;
-      const title = card.querySelector('.card-title');
+      const title = card.querySelector('.mini-title');
       if (title) title.textContent = project.title;
-      const desc = card.querySelector('.card-description');
+      const desc = card.querySelector('.mini-desc');
       if (desc) desc.textContent = project.description;
     });
   });

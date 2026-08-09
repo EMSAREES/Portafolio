@@ -1,79 +1,79 @@
 {
-    "es": [
-        {
-        "id": "guruvirtualschool",
-        "title": "guruvirtualschool",
-        "description": "Paguina de curso ayude a implementar mejora del lado del alumno como barra de progreso y diseño y implementar metodo de pago con stripe",
-        "image": "/img/project/guru.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["PHP", "Bootstrap", "MySQL"]
-        },
-        {
-        "id": "sistemaDental",
-        "title": "Sistema Dental",
-        "description": "Aplicación de gestión clínica diseñada para consultorios dentales. Permite registrar pacientes, agendar citas, llevar el historial de consultas, gestionar ingresos por cada atención, imprimir tickets de pago y organizar la agenda de manera eficiente. Actualmente en uso en una clínica dental, satisfaciendo las necesidades del dentista y optimizando el flujo de trabajo.",
-        "image": "/img/project/sistemaDental.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", ".NET", "SQLite"]
-        },
-        {
-        "id": "sistemaVeterinaria",
-        "title": "Sistema Veterinaria",
-        "description": "Aplicación de escritorio desarrollada en WPF y SQLite para la gestión integral de una clínica veterinaria. Permite administrar clientes, mascotas y citas, así como registrar historiales clínicos, servicios médicos, análisis y tratamientos. Incluye control de servicios pendientes, facturación e historial detallado por mascota, facilitando el flujo de trabajo desde la recepción hasta la atención médica.",
-        "image": "/img/project/sistemaVeterinaria.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", "WPF", ".NET", "SQLite"]
-        },
-        {
-        "id": "redMundialDeJovenesAcademicos",
-        "title": "Red Mundial de Jóvenes Académicos",
-        "description": "Sitio web sin fines de lucro desarrollado para una organización en Ecuador. Su propósito es conectar y promover la colaboración entre jóvenes académicos a nivel internacional, ofreciendo información institucional, recursos de investigación y espacios de difusión de actividades académicas.",
-        "image": "/img/project/red_mundial_jovenes_academicos.png",
-        "codeUrl": "",
-        "demoUrl": "https://rmjovenesacademicos.com/",
-        "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
-        }
-    ],
+  "es": [
+    {
+      "id": "guruvirtualschool",
+      "title": "guruvirtualschool",
+      "description": "Paguina de curso ayude a implementar mejora del lado del alumno como barra de progreso y diseño y implementar metodo de pago con stripe",
+      "image": "/img/project/guru.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["PHP", "Bootstrap", "MySQL"]
+    },
+    {
+      "id": "sistemaDental",
+      "title": "Sistema Dental",
+      "description": "Aplicación de gestión clínica diseñada para consultorios dentales. Permite registrar pacientes, agendar citas, llevar el historial de consultas, gestionar ingresos por cada atención, imprimir tickets de pago y organizar la agenda de manera eficiente. Actualmente en uso en una clínica dental, satisfaciendo las necesidades del dentista y optimizando el flujo de trabajo.",
+      "image": "/img/project/sistemaDental.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["C#", ".NET", "SQLite"]
+    },
+    {
+      "id": "sistemaVeterinaria",
+      "title": "Sistema Veterinaria",
+      "description": "Aplicación de escritorio desarrollada en WPF y SQLite para la gestión integral de una clínica veterinaria. Permite administrar clientes, mascotas y citas, así como registrar historiales clínicos, servicios médicos, análisis y tratamientos. Incluye control de servicios pendientes, facturación e historial detallado por mascota, facilitando el flujo de trabajo desde la recepción hasta la atención médica.",
+      "image": "/img/project/sistemaVeterinaria.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["C#", "WPF", ".NET", "SQLite"]
+    },
+    {
+      "id": "redMundialDeJovenesAcademicos",
+      "title": "Red Mundial de Jóvenes Académicos",
+      "description": "Sitio web sin fines de lucro desarrollado para una organización en Ecuador. Su propósito es conectar y promover la colaboración entre jóvenes académicos a nivel internacional, ofreciendo información institucional, recursos de investigación y espacios de difusión de actividades académicas.",
+      "image": "/img/project/red_mundial_jovenes_academicos.webp",
+      "codeUrl": "",
+      "demoUrl": "https://rmjovenesacademicos.com/",
+      "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
+    }
+  ],
 
-    "en": [
-        {
-        "id": "guruvirtualschool",
-        "title": "Guru Virtual School",
-        "description": "Course platform where I helped implement improvements on the student side such as a progress bar, visual design, and integrated a payment method with Stripe.",
-        "image": "/img/project/guru.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["PHP", "Bootstrap", "MySQL"]
-        },
-        {
-        "id": "sistemaDental",
-        "title": "Dental System",
-        "description": "Clinical management application designed for dental practices. It allows registering patients, scheduling appointments, maintaining consultation records, managing income for each visit, printing payment tickets, and organizing the agenda efficiently. Currently in use at a dental clinic, meeting the dentist's needs and streamlining the workflow.",
-        "image": "/img/project/sistemaDental.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", ".NET", "SQLite"]
-        },
-        {
-        "id": "sistemaVeterinaria",
-        "title": "Veterinary Management System",
-        "description": "Desktop application developed with WPF and SQLite for comprehensive veterinary clinic management. It allows managing clients, pets, and appointments, as well as recording medical histories, services, analyses, and treatments. It includes pending service tracking, billing, and detailed pet history, streamlining the workflow from reception to medical care.",
-        "image": "/img/project/sistemaVeterinaria.png",
-        "codeUrl": "",
-        "demoUrl": "",
-        "technologies": ["C#", "WPF", ".NET", "SQLite"]
-        },
-        {
-        "id": "redMundialDeJovenesAcademicos",
-        "title": "World Network of Young Academics",
-        "description": "Non-profit website developed for an organization in Ecuador. Its mission is to connect and promote collaboration among young academics worldwide, providing institutional information, research resources, and spaces to share academic activities.",
-        "image": "/img/project/red_mundial_jovenes_academicos.png",
-        "codeUrl": "",
-        "demoUrl": "https://rmjovenesacademicos.com/",
-        "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
-        }
-    ]
+  "en": [
+    {
+      "id": "guruvirtualschool",
+      "title": "Guru Virtual School",
+      "description": "Course platform where I helped implement improvements on the student side such as a progress bar, visual design, and integrated a payment method with Stripe.",
+      "image": "/img/project/guru.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["PHP", "Bootstrap", "MySQL"]
+    },
+    {
+      "id": "sistemaDental",
+      "title": "Dental System",
+      "description": "Clinical management application designed for dental practices. It allows registering patients, scheduling appointments, maintaining consultation records, managing income for each visit, printing payment tickets, and organizing the agenda efficiently. Currently in use at a dental clinic, meeting the dentist's needs and streamlining the workflow.",
+      "image": "/img/project/sistemaDental.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["C#", ".NET", "SQLite"]
+    },
+    {
+      "id": "sistemaVeterinaria",
+      "title": "Veterinary Management System",
+      "description": "Desktop application developed with WPF and SQLite for comprehensive veterinary clinic management. It allows managing clients, pets, and appointments, as well as recording medical histories, services, analyses, and treatments. It includes pending service tracking, billing, and detailed pet history, streamlining the workflow from reception to medical care.",
+      "image": "/img/project/sistemaVeterinaria.webp",
+      "codeUrl": "",
+      "demoUrl": "",
+      "technologies": ["C#", "WPF", ".NET", "SQLite"]
+    },
+    {
+      "id": "redMundialDeJovenesAcademicos",
+      "title": "World Network of Young Academics",
+      "description": "Non-profit website developed for an organization in Ecuador. Its mission is to connect and promote collaboration among young academics worldwide, providing institutional information, research resources, and spaces to share academic activities.",
+      "image": "/img/project/red_mundial_jovenes_academicos.webp",
+      "codeUrl": "",
+      "demoUrl": "https://rmjovenesacademicos.com/",
+      "technologies": ["Laravel", "Bootstrap", "MySQL", "Livewire"]
+    }
+  ]
 }

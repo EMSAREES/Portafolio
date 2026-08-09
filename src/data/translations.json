@@ -1,84 +1,130 @@
 {
-    "es": {
-        "nav": {
-            "home": "Inicio",
-            "about": "Acerca",
-            "work": "Trabajo",
-            "contact": "Contacto"
-        },
-        "hero": {
-            "greeting": "Hola, soy Emilio R.",
-            "role": "Desarrollador ",
-            "description": "Amo crear aplicaciones web y desktop  .",
-            "picture":"/img/imagen.jpeg",
-            "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
-            "github":"https://github.com/EMSAREES"
-        },
-        "about": {
-            "title": "Acerca",
-            "description": "Hola, mi nombre es Emilio Reyes. Soy desarrollador web y de escritorio, originario de México. Me apasiona la programación, tanto en entornos web como de escritorio. Aunque todavía no soy muy bueno, estoy en el proceso de mejorar y convertirme en un mejor profesional. Disfruto crear nuevas ideas y proyectos, y aprender en cada paso del camino.",
-            "education": "Educación:",
-            "techStack": "Stack Tecnológico:",
-            "continuousLearning": "Aprendizaje Continuo:",
-            "continuousLearningDescription": "Constantemente expandiendo mis conocimientos con nuevas tecnologías y herramientas. Me encanta estar al día con las últimas tendencias en desarrollo web."
-        },
-        "projects": {
-            "title": "Mi Trabajo",
-            "viewCode": "Código ",
-            "viewDemo": "Acceder",
-            "secondaryTitleUse": "Proyectos en producción",
-            "secondaryTitlePersonal": "Proyectos personales"
-        },
-        "contact": {
-            "title": "Contáctame",
-            "subtitle": "No seas tímido y déjame un mensaje :)",
-            "gmail":"emiliosanielre@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
-            "github":"https://github.com/EMSAREES",
-            "contry":"Sinaloa - Mexico",
-            "Location":"Ubicación",
-            "email":"email"
-        }
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "about": "Acerca",
+      "work": "Trabajo",
+      "contact": "Contacto",
+      "art": "Arte"
     },
-    "en": {
-        "nav": {
-            "home": "Home",
-            "about": "About",
-            "work": "Work",
-            "contact": "Contact"
-        },
-        "hero": {
-            "greeting": "Hi, I'm Emilio R.",
-            "role": "Developer",
-            "description": "That loves creating web and desktop apps.",
-            "picture":"/img/imagen.jpeg",
-            "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
-            "github":"https://github.com/EMSAREES"
-        },
-        "about": {
-            "title": "About",
-            "description": "Hi, my name is Emilio Reyes. I'm a web and desktop developer from Mexico. I’m passionate about programming in both environments. Although I'm not very skilled yet, I'm actively working to improve and become better every day. I enjoy creating new ideas and projects, and learning throughout the process.",
-            "education": "Education:",
-            "techStack": "Tech Stack:",
-            "continuousLearning": "Continuous Learning:",
-            "continuousLearningDescription": "Constantly expanding my knowledge with new technologies and tools. I love staying up to date with the latest trends in web development."
-        },
-        "projects": {
-            "title": "My Work",
-            "viewCode": "Code",
-            "viewDemo": "Access",
-            "secondaryTitleUse": "Production Projects",
-            "secondaryTitlePersonal": "Personal Projects"
-        },
-        "contact": {
-            "title": "Get in Touch",
-            "subtitle": "Don't be shy, and leave me a message :)",
-            "gmail":"emiliosanielre@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
-            "github":"https://github.com/EMSAREES",
-            "contry":"Sinaloa - Mexico",
-            "Location":"Location",
-            "email":"email"
-        }
+    "hero": {
+      "greeting": "Hola, soy Emilio R.",
+      "role": "Desarrollador ",
+      "description": "Amo crear aplicaciones web y desktop  .",
+      "picture": "/img/imagen.webp",
+      "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
+      "github": "https://github.com/EMSAREES",
+      "doubleClickHint": "¡Dame doble clic!"
+    },
+    "about": {
+      "title": "Acerca",
+      "description": "Hola, mi nombre es Emilio Reyes. Soy desarrollador web y de escritorio, originario de México. Me apasiona la programación, tanto en entornos web como de escritorio. Aunque todavía no soy muy bueno, estoy en el proceso de mejorar y convertirme en un mejor profesional. Disfruto crear nuevas ideas y proyectos, y aprender en cada paso del camino.",
+      "education": "Educación:",
+      "techStack": "Stack Tecnológico:",
+      "continuousLearning": "Aprendizaje Continuo:",
+      "continuousLearningDescription": "Constantemente expandiendo mis conocimientos con nuevas tecnologías y herramientas. Me encanta estar al día con las últimas tendencias en desarrollo web."
+    },
+    "projects": {
+      "title": "Mi Trabajo",
+      "viewCode": "Código ",
+      "viewDemo": "Acceder",
+      "secondaryTitleUse": "Proyectos en producción",
+      "secondaryTitlePersonal": "Proyectos personales"
+    },
+    "contact": {
+      "title": "Contáctame",
+      "subtitle": "No seas tímido y déjame un mensaje :)",
+      "gmail": "emiliosanielre@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
+      "github": "https://github.com/EMSAREES",
+      "contry": "Sinaloa - Mexico",
+      "Location": "Ubicación",
+      "email": "email"
+    },
+    "art": {
+      "title": "Arte",
+      "subtitle": "Cuando no estoy programando, dibujo. Una colección de bocetos e ilustraciones.",
+      "empty": "Pronto subiré más piezas por aquí."
+    },
+    "game": {
+      "toggle": "modo juego",
+      "instructions": "Cómete tu propio portafolio",
+      "controlsDesktop": "← ↑ → ↓ o WASD para moverte",
+      "controlsMobile": "Desliza para cambiar de dirección",
+      "score": "Puntos",
+      "lives": "Vidas",
+      "length": "Longitud",
+      "win": "¡Te comiste todo el portafolio!",
+      "lose": "Game Over",
+      "restart": "Reiniciar",
+      "close": "Cerrar"
+    },
+    "footer": {
+      "built": "hecho con café y 100% de fe de que no falle"
     }
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "work": "Work",
+      "contact": "Contact",
+      "art": "Art"
+    },
+    "hero": {
+      "greeting": "Hi, I'm Emilio R.",
+      "role": "Developer",
+      "description": "That loves creating web and desktop apps.",
+      "picture": "/img/imagen.webp",
+      "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
+      "github": "https://github.com/EMSAREES",
+      "doubleClickHint": "Double click me!"
+    },
+    "about": {
+      "title": "About",
+      "description": "Hi, my name is Emilio Reyes. I'm a web and desktop developer from Mexico. I’m passionate about programming in both environments. Although I'm not very skilled yet, I'm actively working to improve and become better every day. I enjoy creating new ideas and projects, and learning throughout the process.",
+      "education": "Education:",
+      "techStack": "Tech Stack:",
+      "continuousLearning": "Continuous Learning:",
+      "continuousLearningDescription": "Constantly expanding my knowledge with new technologies and tools. I love staying up to date with the latest trends in web development."
+    },
+    "projects": {
+      "title": "My Work",
+      "viewCode": "Code",
+      "viewDemo": "Access",
+      "secondaryTitleUse": "Production Projects",
+      "secondaryTitlePersonal": "Personal Projects"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Don't be shy, and leave me a message :)",
+      "gmail": "emiliosanielre@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/emilio-s-reyes-espinoza-a99a03350/",
+      "github": "https://github.com/EMSAREES",
+      "contry": "Sinaloa - Mexico",
+      "Location": "Location",
+      "email": "email"
+    },
+    "art": {
+      "title": "Art",
+      "subtitle": "When I'm not coding, I draw. A collection of sketches and illustrations.",
+      "empty": "More pieces coming soon."
+    },
+    "game": {
+      "toggle": "game mode",
+      "instructions": "Eat your own portfolio",
+      "controlsDesktop": "← ↑ → ↓ or WASD to move",
+      "controlsMobile": "Swipe to change direction",
+      "score": "Score",
+      "lives": "Lives",
+      "length": "Length",
+      "win": "You ate the whole portfolio!",
+      "lose": "Game Over",
+      "restart": "Restart",
+      "close": "Close"
+    },
+    "footer": {
+      "built": "Hecho con café y un 100 % de fe en que no fallará."
+    }
+  }
 }

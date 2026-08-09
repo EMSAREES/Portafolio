@@ -1,46 +1,42 @@
 ---
 // pages/index.astro
-// Esta es la única página.
-// Solo importa componentes y los pone en orden, igual que en React
-// cuando tienes un App.jsx que solo ensambla secciones.
+import Layout       from '../layouts/Layout.astro';
 
-import Layout   from '../layouts/Layout.astro';
-
-import Header   from '../components/Header.astro';
-import Hero     from '../components/Hero.astro';
-import About    from '../components/About.astro';
-import Projects from '../components/Projects.astro';
-import Contact  from '../components/Contact.astro';
-
-// ¿Quieres agregar una nueva sección? Solo:
-// 1. Crea el componente en /components
-// 2. Impórtalo aquí
-// 3. Agrégalo abajo
+import Header       from '../components/Header.astro';
+import Hero         from '../components/Hero.astro';
+import About        from '../components/About.astro';
+import Projects     from '../components/Projects.astro';
+import Art          from '../components/Art.astro';
+import Contact      from '../components/Contact.astro';
+import SnakeGame    from '../components/SnakeGame.astro';
 ---
 
-<Layout title="Portafolio — Emilio R.">
+<Layout>
   <Header />
 
   <main class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth">
-    <!-- primera seccion vienbenida -->
-        <div class="snap-center">
-            <Hero />
-        </div>
-        
-        <!-- Accerca de mi -->
-        <div class="snap-center">
-            <About />
-        </div>
+    <div class="snap-center">
+        <Hero />
+    </div>
 
-        <!-- mis projectos -->
-        <div class="snap-center">
-            <Projects />
-        </div>
+    <div class="snap-center">
+        <About />
+    </div>
 
-        <!-- contacto -->
-        <div class="snap-center">
-            <Contact />
-        </div>
+    <div class="snap-center">
+        <Projects />
+    </div>
+
+    <!-- <div class="snap-center">
+        <Art />
+    </div> -->
+
+    <div class="snap-center">
+        <Contact />
+    </div>
   </main>
+
+  <!-- Debe renderizarse después de <main>: SnakeGame inserta ahí su canvas. -->
+  <SnakeGame />
 
 </Layout>

@@ -1,0 +1,341 @@
+---
+// SnakeGame.astro
+// "Game mode": snake que recorre TODO el portafolio (no un mini-mapa).
+// El canvas vive dentro de <main> -que es el contenedor real que
+// scrollea en index.astro-, mide su alto completo, y ~10 comidas
+// (las secciones del portafolio) aparecen en posiciones aleatorias
+// sobre el contenido real. Al comerse una, aparece otra en otro lugar.
+
+import translations from '../data/translations.json';
+---
+
+<div class="game-toggle-fixed fixed top-20 left-4 z-[210]">
+  <button
+    id="game-toggle-btn"
+    class="flex items-center gap-2 bg-ink-900 border border-ink-600 hover:border-accent-500 text-paper-300 hover:text-accent-400 font-mono text-xs px-4 py-2 rounded-full transition-colors"
+  >
+    <span class="w-2 h-2 rounded-full bg-coral-500"></span>
+    <span data-i18n="game.toggle">game mode</span>
+  </button>
+</div>
+
+<div
+  id="game-hud"
+  class="hidden fixed top-4 right-4 z-[210] bg-ink-900/95 border border-ink-600 rounded-xl px-4 py-3 font-mono text-xs text-paper-300 flex flex-col gap-1 backdrop-blur-sm"
+>
+  <div class="flex items-center gap-3">
+    <span><span data-i18n="game.score">Puntos</span>: <span id="game-score">0</span></span>
+    <span><span data-i18n="game.length">Longitud</span>: <span id="game-length">3</span></span>
+  </div>
+  <p class="text-paper-300/60">
+    <span class="hidden md:inline" data-i18n="game.controlsDesktop">← ↑ → ↓ o WASD para moverte</span>
+    <span class="md:hidden" data-i18n="game.controlsMobile">Desliza para cambiar de dirección</span>
+  </p>
+  <button id="game-close-btn" class="self-end text-paper-300 hover:text-coral-500 transition-colors" data-i18n="game.close">
+    Cerrar
+  </button>
+</div>
+
+<!-- El canvas se mueve por JS dentro de <main> para poder medir/recorrer
+     todo el alto real del portafolio, no solo el viewport. -->
+<canvas id="game-canvas" class="hidden absolute top-0 left-0 z-[50] pointer-events-none"></canvas>
+
+<div id="game-end-screen" class="hidden fixed inset-0 z-[220] flex flex-col items-center justify-center gap-4 bg-ink-950/90">
+  <p id="game-end-message" class="text-3xl font-display font-semibold text-paper-50"></p>
+  <button id="game-restart-btn" class="bg-accent-500 hover:bg-accent-600 text-ink-950 font-mono text-sm font-medium px-6 py-3 rounded-lg transition-colors" data-i18n="game.restart">
+    Reiniciar
+  </button>
+</div>
+
+<script define:vars={{ translations }}>
+  const toggleBtn  = document.getElementById('game-toggle-btn');
+  const hud        = document.getElementById('game-hud');
+  const closeBtn   = document.getElementById('game-close-btn');
+  const canvas     = document.getElementById('game-canvas');
+  const ctx        = canvas.getContext('2d');
+  const scoreEl    = document.getElementById('game-score');
+  const lengthEl   = document.getElementById('game-length');
+  const endScreen  = document.getElementById('game-end-screen');
+  const endMessage = document.getElementById('game-end-message');
+  const restartBtn = document.getElementById('game-restart-btn');
+
+  // <main> es el contenedor real que scrollea (ver index.astro: h-screen
+  // overflow-y-auto). Movemos el canvas ahí para que mida el alto real
+  // de TODO el portafolio y haga scroll junto con el contenido.
+  const mainEl = document.querySelector('main');
+  mainEl.appendChild(canvas);
+  const originalSnapType = mainEl.style.scrollSnapType;
+
+  const SECTION_LABELS = ['home', 'about', 'work', 'art', 'contact'];
+  const BRICK_COLORS = ['#f2a65a', '#e8883f', '#ff8478', '#f2604f', '#ded5c2'];
+  const FOOD_COUNT = 10;
+  const CELL = 28;
+
+  let cols, rows;
+  let snake = [];
+  let dir = { x: 1, y: 0 };
+  let nextDir = { x: 1, y: 0 };
+  let foods = [];
+  let score = 0;
+  let tickDelay = 140;
+  let tickTimeout = null;
+  let running = false;
+
+  function currentLang() {
+    return document.documentElement.lang || 'es';
+  }
+  function t(path) {
+    const dict = translations[currentLang()] || translations.es;
+    return path.split('.').reduce((acc, k) => (acc ? acc[k] : null), dict);
+  }
+
+  // Mide el ALTO COMPLETO de todo el portafolio (scrollHeight de <main>),
+  // no solo lo visible en pantalla.
+  function sizeCanvasToPortfolio() {
+    const fullHeight = mainEl.scrollHeight;
+    const fullWidth = mainEl.clientWidth; // overflow-x-hidden: el ancho no scrollea
+    cols = Math.max(10, Math.floor(fullWidth / CELL));
+    rows = Math.max(10, Math.floor(fullHeight / CELL));
+    canvas.width = cols * CELL;
+    canvas.height = rows * CELL;
+    canvas.style.width = canvas.width + 'px';
+    canvas.style.height = canvas.height + 'px';
+  }
+
+  function initSnake() {
+    // La partida empieza dentro de Hero, no a mitad de todo el documento.
+    // `getBoundingClientRect` permite obtener su posición aunque <main>
+    // sea el elemento que hace scroll.
+    const hero = document.getElementById('home');
+    const mainRect = mainEl.getBoundingClientRect();
+    const heroRect = hero?.getBoundingClientRect();
+    const heroCenterY = heroRect
+      ? mainEl.scrollTop + (heroRect.top - mainRect.top) + heroRect.height / 2
+      : mainEl.clientHeight / 2;
+    const startX = Math.max(2, Math.min(cols - 1, Math.floor(cols / 2)));
+    const startY = Math.max(0, Math.min(rows - 1, Math.floor(heroCenterY / CELL)));
+    snake = [
+      { x: startX, y: startY },
+      { x: startX - 1, y: startY },
+      { x: startX - 2, y: startY },
+    ];
+    dir = { x: 1, y: 0 };
+    nextDir = { x: 1, y: 0 };
+  }
+
+  function randomFreeCell() {
+    let cell;
+    let tries = 0;
+    do {
+      cell = { x: Math.floor(Math.random() * cols), y: Math.floor(Math.random() * rows) };
+      tries++;
+    } while (
+      tries < 300 &&
+      (snake.some((s) => s.x === cell.x && s.y === cell.y) ||
+        foods.some((f) => f.x === cell.x && f.y === cell.y))
+    );
+    return cell;
+  }
+
+  function spawnFood() {
+    const cell = randomFreeCell();
+    foods.push({
+      ...cell,
+      label: SECTION_LABELS[Math.floor(Math.random() * SECTION_LABELS.length)],
+      color: BRICK_COLORS[Math.floor(Math.random() * BRICK_COLORS.length)],
+    });
+  }
+
+  function initFoods() {
+    foods = [];
+    for (let i = 0; i < FOOD_COUNT; i++) spawnFood();
+  }
+
+  function startGame() {
+    sizeCanvasToPortfolio();
+    initSnake();
+    initFoods();
+    score = 0;
+    tickDelay = 140;
+    scoreEl.textContent = '0';
+    lengthEl.textContent = String(snake.length);
+    endScreen.classList.add('hidden');
+    canvas.classList.remove('hidden');
+    hud.classList.remove('hidden');
+    mainEl.style.scrollSnapType = 'none'; // que el auto-scroll no "salte" entre secciones
+    running = true;
+    centerViewOnSnake(true);
+    draw();
+    scheduleTick();
+  }
+
+  function endGame(won) {
+    running = false;
+    clearTimeout(tickTimeout);
+    endMessage.textContent = won ? t('game.win') : t('game.lose');
+    endScreen.classList.remove('hidden');
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // comidas repartidas por todo el portafolio
+    foods.forEach((food) => {
+      ctx.fillStyle = food.color;
+      ctx.beginPath();
+      ctx.roundRect(food.x * CELL + 3, food.y * CELL + 3, CELL - 6, CELL - 6, 7);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(13,13,18,0.75)';
+      ctx.font = '9px "JetBrains Mono", monospace';
+      ctx.textAlign = 'center';
+      ctx.fillText(food.label, food.x * CELL + CELL / 2, food.y * CELL + CELL / 2 + 3);
+    });
+
+    // serpiente
+    snake.forEach((seg, i) => {
+      ctx.fillStyle = i === 0 ? '#f2ede1' : '#f2a65a';
+      ctx.beginPath();
+      ctx.roundRect(seg.x * CELL + 2, seg.y * CELL + 2, CELL - 4, CELL - 4, 6);
+      ctx.fill();
+    });
+  }
+
+  // Cámara: hace scroll dentro de <main> para que siempre veas la cabeza
+  // de la serpiente, sin importar en qué parte del portafolio esté.
+  function centerViewOnSnake(instant) {
+    const head = snake[0];
+    mainEl.scrollTo({
+      top: Math.max(0, head.y * CELL - mainEl.clientHeight / 2),
+      behavior: instant ? 'auto' : 'smooth',
+    });
+  }
+
+  function followCameraIfNeeded() {
+    const head = snake[0];
+    const headPxY = head.y * CELL;
+    const viewTop = mainEl.scrollTop;
+    const viewBottom = viewTop + mainEl.clientHeight;
+    const margin = CELL * 3;
+    if (headPxY < viewTop + margin || headPxY > viewBottom - margin) {
+      centerViewOnSnake(false);
+    }
+  }
+
+  function tick() {
+    dir = nextDir;
+    const head = snake[0];
+    const newHead = { x: head.x + dir.x, y: head.y + dir.y };
+
+    // choque contra el borde del portafolio
+    if (newHead.x < 0 || newHead.x >= cols || newHead.y < 0 || newHead.y >= rows) {
+      endGame(false);
+      return;
+    }
+    // La cola se excluye porque se moverá en este tick cuando no come.
+    if (snake.slice(0, -1).some((s) => s.x === newHead.x && s.y === newHead.y)) {
+      endGame(false);
+      return;
+    }
+
+    snake.unshift(newHead);
+
+    const eatenIndex = foods.findIndex((f) => f.x === newHead.x && f.y === newHead.y);
+    if (eatenIndex !== -1) {
+      foods.splice(eatenIndex, 1);
+      score += 10;
+      scoreEl.textContent = String(score);
+      lengthEl.textContent = String(snake.length);
+      tickDelay = Math.max(80, tickDelay - 2);
+      spawnFood(); // siempre mantiene ~10 comidas disponibles en el portafolio
+      if (snake.length >= cols * rows) {
+        endGame(true);
+        return;
+      }
+    } else {
+      snake.pop();
+    }
+
+    followCameraIfNeeded();
+    draw();
+  }
+
+  function scheduleTick() {
+    clearTimeout(tickTimeout);
+    tickTimeout = setTimeout(() => {
+      if (!running) return;
+      tick();
+      scheduleTick();
+    }, tickDelay);
+  }
+
+  // ── controles ──────────────────────────────────────────────
+  const DIR_MAP = {
+    ArrowUp: { x: 0, y: -1 }, w: { x: 0, y: -1 }, W: { x: 0, y: -1 },
+    ArrowDown: { x: 0, y: 1 }, s: { x: 0, y: 1 }, S: { x: 0, y: 1 },
+    ArrowLeft: { x: -1, y: 0 }, a: { x: -1, y: 0 }, A: { x: -1, y: 0 },
+    ArrowRight: { x: 1, y: 0 }, d: { x: 1, y: 0 }, D: { x: 1, y: 0 },
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeGame();
+      return;
+    }
+    if (!running) return;
+    const newDir = DIR_MAP[e.key];
+    if (!newDir) return;
+    if (newDir.x === -dir.x && newDir.y === -dir.y) return; // no reversa directa
+    nextDir = newDir;
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Swipe en móvil: el canvas tiene pointer-events:none, así que
+  // escuchamos en document para no bloquear el resto del sitio.
+  let touchStartX = 0;
+  let touchStartY = 0;
+  document.addEventListener('touchstart', (e) => {
+    if (!running) return;
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', (e) => {
+    if (!running) return;
+    const touch = e.changedTouches[0];
+    const dx = touch.clientX - touchStartX;
+    const dy = touch.clientY - touchStartY;
+    if (Math.abs(dx) < 20 && Math.abs(dy) < 20) return;
+
+    const newDir = Math.abs(dx) > Math.abs(dy)
+      ? { x: dx > 0 ? 1 : -1, y: 0 }
+      : { x: 0, y: dy > 0 ? 1 : -1 };
+
+    if (newDir.x === -dir.x && newDir.y === -dir.y) return;
+    nextDir = newDir;
+  });
+
+  // ── abrir / cerrar ─────────────────────────────────────────
+  function closeGame() {
+    running = false;
+    clearTimeout(tickTimeout);
+    canvas.classList.add('hidden');
+    hud.classList.add('hidden');
+    endScreen.classList.add('hidden');
+    mainEl.style.scrollSnapType = originalSnapType || '';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (canvas.classList.contains('hidden')) startGame();
+    else closeGame();
+  });
+  closeBtn.addEventListener('click', closeGame);
+  restartBtn.addEventListener('click', startGame);
+
+  window.addEventListener('resize', () => {
+    if (canvas.classList.contains('hidden')) return;
+    startGame();
+  });
+</script>

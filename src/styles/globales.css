@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS — "tinta y papel"
+   Paleta cálida (tinta + papel + acento coral/ámbar) en vez del
+   típico cyan/azul de plantilla. Pensada para convivir con arte
+   a mano: tipografía serif con carácter + mono para detalles.
+   ============================================================ */
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --color-ink-950: #0d0d12;
+  --color-ink-900: #131318;
+  --color-ink-800: #1a1a22;
+  --color-ink-700: #24242f;
+  --color-ink-600: #33333f;
+  --color-ink-500: #4a4a58;
+
+  --color-paper-50: #faf6ef;
+  --color-paper-100: #f2ede1;
+  --color-paper-200: #ded5c2;
+  --color-paper-300: #9d94a3;
+
+  --color-accent-400: #f2a65a;
+  --color-accent-500: #e8883f;
+  --color-accent-600: #c96a2b;
+
+  --color-coral-400: #ff8478;
+  --color-coral-500: #f2604f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-ink-950);
+    color: var(--color-paper-100);
+  }
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+  ::selection {
+    background: var(--color-accent-500);
+    color: var(--color-ink-950);
+  }
+}
+
+@layer utilities {
+  /* Etiqueta de sección estilo "/ titulo" — acento tipográfico
+     recurrente en todo el sitio para dar identidad. */
+  .section-label {
+    font-family: var(--font-mono);
+    color: var(--color-accent-400);
+    letter-spacing: 0.02em;
+  }
+  .section-label::before {
+    content: "/ ";
+    color: var(--color-coral-500);
+  }
+
+  /* Marco tipo "hoja de dibujo": borde doble desalineado,
+     evoca un boceto hecho a mano sin depender de imágenes. */
+  .sketch-frame {
+    position: relative;
+  }
+  .sketch-frame::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border: 1.5px solid var(--color-accent-500);
+    border-radius: 1.25rem;
+    opacity: 0.5;
+    transform: rotate(-1.2deg);
+    pointer-events: none;
+  }
+
+  .ink-card {
+    background: var(--color-ink-900);
+    border: 1px solid var(--color-ink-600);
+    border-radius: 1rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  .ink-card:hover {
+    border-color: var(--color-accent-500);
+    transform: translateY(-4px);
+  }
+}

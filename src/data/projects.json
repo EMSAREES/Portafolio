@@ -1,10 +1,19 @@
 {
     "es": [
         {
+        "id": "sketchLibraryForo",
+        "title": "SketchLibrary Foro",
+        "description": "Red social y foro tipo X o Reddit, enfocada en compartir ilustraciones y publicaciones. Desarrollada con React y Next.js, integrando autenticación con NextAuth, base de datos con Prisma/Neon, almacenamiento en AWS S3 y moderación de contenido con TensorFlow/NSFWJS. Incluye feed dinámico, perfiles de usuario y sistema de interacción social.",
+        "image": "/img/project/sketchlibrary_Foro.webp",
+        "codeUrl": "",
+        "demoUrl": "https://sketch-library.vercel.app/",
+        "technologies": ["React", "Next.js", "Prisma", "AWS S3", "TensorFlow"]
+        },
+        {
         "id": "sketchLibrary",
         "title": "SketchLibrary",
         "description": "Aplicacion para compartir pdf de dibujo una colecion o biblioteca de descargar material, referencia de dibujo",
-        "image": "/img/project/sketchlibrary.png",
+        "image": "/img/project/sketchlibrary.webp",
         "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
         "demoUrl": "https://sketchlibrary.netlify.app/",
         "technologies": ["React", "Tailwind CSS", "Firebase"]
@@ -13,7 +22,7 @@
         "id": "fakeShop",
         "title": "FakeShop",
         "description": "Aplicación de comercio electrónico desarrollada en Angular para comprender los fundamentos del framework y el consumo de APIs. Integra la API de FakeShop y ofrece tanto una interfaz pública para usuarios como un panel administrativo con dashboard para la gestión de productos y pedidos.",
-        "image": "/img/project/fakeShop.png",
+        "image": "/img/project/fakeShop.webp",
         "codeUrl": "https://github.com/EMSAREES/FakeShop",
         "demoUrl": "fakeshop-angular.netlify.app",
         "technologies": ["Angular", "TypeScript", "SASS"]
@@ -22,7 +31,7 @@
         "id": "marketplace-Eco-Rueda",
         "title": "Marketplace Eco Rueda",
         "description": "Plataforma de comercio electrónico enfocada en la venta de sillas ecológicas. Incluye un sistema de carrito de compras dinámico, integración segura con Stripe para pagos en línea y una interfaz moderna desarrollada con Laravel y Tailwind CSS.",
-        "image": "/img/project/marketplace-eco-rueda-production.png",
+        "image": "/img/project/marketplace-eco-rueda-production.webp",
         "codeUrl": "https://github.com/EMSAREES/marketplace-Eco-Rueda",
         "demoUrl": "https://marketplace-eco-rueda-production.up.railway.app/",
         "technologies": ["PHP", "Laravel", "MySQL", "Stripe", "Tailwind CSS"]
@@ -31,7 +40,7 @@
         "id": "bienesraices",
         "title": "Bienesraices",
         "description": "Un sistema web completo de práctica para la gestión de propiedades inmobiliarias desarrollado con PHP siguiendo el patrón MVC (Modelo-Vista-Controlador) y programación orientada a objetos. Contiene blog y contacto.",
-        "image": "/img/project/bienesRaices.png",
+        "image": "/img/project/bienesRaices.webp",
         "codeUrl": "https://github.com/EMSAREES/bienesraicesMVC",
         "demoUrl": "",
         "technologies": ["MySQL", "PHP", "JavaScript"]
@@ -40,25 +49,16 @@
             "id": "gestion-de-Gymnasio",
             "title": "Gestion de Gymnasio",
             "description": "Gestión de Gimnasio es un sistema integral de escritorio desarrollado en C# con Windows Forms, diseñado para simplificar la administración de gimnasios y mejorar la experiencia de usuarios y personal.",
-            "image": "/img/project/sistema_gym.png",
+            "image": "/img/project/sistema_gym.webp",
             "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
             "demoUrl": "",
             "technologies": ["C#", "WinForms", "SQL Server"]
         },
         {
-        "id": "project-manager",
-        "title": "Project manager",
-        "description": "Gestion de proyecto de programacion una manera de encontrar tus proyectos y por categoria y peude abrir vs code o vs studio",
-        "image": "/img/project/projectManager.png",
-        "codeUrl": "https://github.com/EMSAREES/project-manager",
-        "demoUrl": "",
-        "technologies": ["C#", "WinForms"]
-        },
-        {
             "id": "pomodoro",
             "title": "Time Pomodoro",
             "description": "Temporizador Pomodoro interactivo que te ayuda a gestionar tu tiempo y aumentar tu productividad. Incluye ciclos de trabajo de 25 minutos, descansos cortos de 5 minutos y descansos largos de 15 minutos. Cuenta con gestión de tareas integrada, diseño minimalista y notificaciones de audio para cada fase del ciclo Pomodoro.",
-            "image": "/img/project/pomodoro.png",
+            "image": "/img/project/pomodoro.webp",
             "codeUrl": "https://github.com/EMSAREES/pomodoro",
             "demoUrl": "https://mipomodoroweb.netlify.app/",
             "technologies": ["React", "JavaScript", "CSS"]
@@ -67,7 +67,7 @@
         "id": "design_festivalMusical",
         "title": "Design festivalMusical",
         "description": "¡Bienvenido a Design Festival Musical! Un proyecto creativo que combina el arte del diseño gráfico con la energía vibrante de la música. Este repositorio contiene una serie de diseños visuales inspirados en festivales musicales, ideales para promocionar eventos, conciertos y festivales en plataformas digitales",
-        "image": "/img/project/design_festivalMusical.png",
+        "image": "/img/project/design_festivalMusical.webp",
         "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
         "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
         "technologies": ["JavaScript", "HTML", "SASS"]
@@ -76,7 +76,7 @@
         "id": "games",
         "title": "Games",
         "description": "Five Play Games es una colección de 5 divertidos juegos web desarrollados con JavaScript, HTML y CSS, diseñada para jugar solo o con amigos directamente desde tu navegador.",
-        "image": "/img/project/game.png",
+        "image": "/img/project/game.webp",
         "codeUrl": "https://github.com/EMSAREES/games",
         "demoUrl": "https://fiveplay.netlify.app/",
         "technologies": ["HTML", "CSS", "JavaScript"]
@@ -85,7 +85,7 @@
         "id": "Password-Crypto",
         "title": "Password Crypto",
         "description": "Password Crypto es una solución completa que integra un frontend en React y un backend con API segura basada en AES-256-CBC. Desde el navegador puedes cifrar y descifrar contraseñas de manera rápida y sencilla, mientras que la API garantiza la confidencialidad y protección de datos sensibles para aplicaciones web o móviles. Ideal para practicar criptografía básica y asegurar información privada con un flujo seguro y profesional.",
-        "image": "/img/project/Gestor_de_Contraseñas.png",
+        "image": "/img/project/gestor-contrasenas.webp",
         "codeUrl": "https://github.com/EMSAREES/Generador-de-Claves-Cifrador-y-Descifrador",
         "demoUrl": "https://keycrypte-descripte.netlify.app/",
         "technologies": ["React", "JavaScript", "Python", "Flask"]
@@ -94,7 +94,7 @@
         "id": "movie-Library",
         "title": "Movie Library",
         "description": "Movie Library 🎬 — Aplicación web ASP.NET Core MVC para explorar películas usando la API de TMDB. Incluye búsqueda, detalles y exploración de películas.",
-        "image": "/img/project/movieLibrery.png",
+        "image": "/img/project/movieLibrery.webp",
         "codeUrl": "https://github.com/EMSAREES/Movie-Library",
         "demoUrl": "",
         "technologies": ["C#", "ASP.NET Core", "API"]
@@ -103,10 +103,19 @@
 
     "en": [
         {
+        "id": "sketchLibraryForo",
+        "title": "SketchLibrary Foro",
+        "description": "Social network and forum similar to X or Reddit, focused on sharing illustrations and posts. Built with React and Next.js, integrating NextAuth authentication, Prisma/Neon database, AWS S3 storage, and content moderation with TensorFlow/NSFWJS. Includes dynamic feed, user profiles, and social interaction system.",
+        "image": "/img/project/sketchlibrary_Foro.webp",
+        "codeUrl": "",
+        "demoUrl": "https://sketch-library.vercel.app/",
+        "technologies": ["React", "Next.js", "Prisma", "AWS S3", "TensorFlow"]
+        },
+        {
         "id": "sketchLibrary",
         "title": "SketchLibrary",
         "description": "Application for sharing drawing PDFs — a collection or library for downloading drawing materials and references.",
-        "image": "/img/project/sketchlibrary.png",
+        "image": "/img/project/sketchlibrary.webp",
         "codeUrl": "https://github.com/EMSAREES/SketchLibrary",
         "demoUrl": "https://sketchlibrary.netlify.app/",
         "technologies": ["React", "Tailwind CSS", "Firebase"]
@@ -115,7 +124,7 @@
         "id": "fakeShop",
         "title": "FakeShop",
         "description": "E-commerce application built with Angular to explore the fundamentals of the framework and API integration. It consumes the FakeShop API and provides both a public storefront for users and an administrative dashboard for managing products and orders.",
-        "image": "/img/project/fakeShop.png",
+        "image": "/img/project/fakeShop.webp",
         "codeUrl": "https://github.com/EMSAREES/FakeShop",
         "demoUrl": "https://fakeshop-angular.netlify.app",
         "technologies": ["Angular", "TypeScript", "SASS"]
@@ -124,7 +133,7 @@
         "id": "marketplace-Eco-Rueda",
         "title": "Marketplace Eco Rueda",
         "description": "E-commerce platform focused on selling eco-friendly chairs. Includes a dynamic shopping cart system, secure Stripe integration for online payments, and a modern interface developed with Laravel and Tailwind CSS.",
-        "image": "/img/project/marketplace-eco-rueda-production.png",
+        "image": "/img/project/marketplace-eco-rueda-production.webp",
         "codeUrl": "https://github.com/EMSAREES/marketplace-Eco-Rueda",
         "demoUrl": "https://marketplace-eco-rueda-production.up.railway.app/",
         "technologies": ["PHP", "Laravel", "MySQL", "Stripe", "Tailwind CSS"]
@@ -133,7 +142,7 @@
         "id": "bienesraices",
         "title": "Real Estate",
         "description": "A complete web system for managing real estate properties developed with PHP following the MVC (Model-View-Controller) pattern and object-oriented programming. Includes blog and contact section.",
-        "image": "/img/project/bienesRaices.png",
+        "image": "/img/project/bienesRaices.webp",
         "codeUrl": "https://github.com/EMSAREES/bienesraicesMVC",
         "demoUrl": "",
         "technologies": ["MySQL", "PHP", "JavaScript"]
@@ -142,25 +151,16 @@
             "id": "gestion-de-Gymnasio",
             "title": "Gym Management System",
             "description": "Gym Management is a comprehensive desktop system developed in C# with Windows Forms, designed to simplify gym administration and enhance user and staff experience.",
-            "image": "/img/project/sistema_gym.png",
+            "image": "/img/project/sistema_gym.webp",
             "codeUrl": "https://github.com/EMSAREES/Gestion-de-Gymnasio",
             "demoUrl": "",
             "technologies": ["C#", "WinForms", "SQL Server"]
         },
         {
-        "id": "project-manager",
-        "title": "Project Manager",
-        "description": "Programming project manager that helps you organize your projects by category and open them directly in VS Code or Visual Studio.",
-        "image": "/img/project/projectManager.png",
-        "codeUrl": "https://github.com/EMSAREES/project-manager",
-        "demoUrl": "",
-        "technologies": ["C#", "WinForms"]
-        },
-        {
             "id": "pomodoro",
             "title": "Time Pomodoro",
             "description": "Interactive Pomodoro timer that helps you manage your time and boost productivity. Features 25-minute work cycles, 5-minute short breaks, and 15-minute long breaks. Includes integrated task management, minimalist design, and audio notifications for each phase of the Pomodoro cycle.",
-            "image": "/img/project/pomodoro.png",
+            "image": "/img/project/pomodoro.webp",
             "codeUrl": "https://github.com/EMSAREES/pomodoro",
             "demoUrl": "https://mipomodoroweb.netlify.app/",
             "technologies": ["React", "JavaScript", "CSS"]
@@ -169,7 +169,7 @@
         "id": "design_festivalMusical",
         "title": "Design Festival Musical",
         "description": "Welcome to Design Festival Musical! A creative project that combines graphic design with the vibrant energy of music. This repository contains visual designs inspired by music festivals, perfect for promoting events and concerts online.",
-        "image": "/img/project/design_festivalMusical.png",
+        "image": "/img/project/design_festivalMusical.webp",
         "codeUrl": "https://github.com/EMSAREES/design_festivalMusical",
         "demoUrl": "https://desing-fesivalmusicalgs.netlify.app/",
         "technologies": ["JavaScript", "HTML", "SASS"]
@@ -178,7 +178,7 @@
         "id": "games",
         "title": "Games",
         "description": "Five Play Games is a collection of 5 fun web games developed with JavaScript, HTML, and CSS — designed for solo or multiplayer play directly in your browser.",
-        "image": "/img/project/game.png",
+        "image": "/img/project/game.webp",
         "codeUrl": "https://github.com/EMSAREES/games",
         "demoUrl": "https://fiveplay.netlify.app/",
         "technologies": ["HTML", "CSS", "JavaScript"]
@@ -187,7 +187,7 @@
         "id": "Password-Crypto",
         "title": "Password Crypto",
         "description": "Password Crypto is a complete solution that integrates a React-based frontend with a secure backend API using AES-256-CBC. From the browser, you can quickly and easily encrypt and decrypt passwords, while the API ensures confidentiality and protection of sensitive data for web or mobile applications. It is ideal for practicing basic cryptography and safeguarding private information with a secure and professional workflow.",
-        "image": "/img/project/Gestor_de_Contraseñas.png",
+        "image": "/img/project/gestor-contrasenas.webp",
         "codeUrl": "https://github.com/EMSAREES/Generador-de-Claves-Cifrador-y-Descifrador",
         "demoUrl": "https://keycrypte-descripte.netlify.app/",
         "technologies": ["React", "JavaScript",  "Python", "Flask"]
@@ -195,8 +195,8 @@
         {
         "id": "movie-Library",
         "title": "Movie Library",
-        "description": "Movie Library 🎬 — ASP.NET Core MVC web application for exploring movies using the TMDB API. Features include search, details, and movie exploration.",
-        "image": "/img/project/movieLibrery.png",
+        "description": "Movie Library  — ASP.NET Core MVC web application for exploring movies using the TMDB API. Features include search, details, and movie exploration.",
+        "image": "/img/project/movieLibrery.webp",
         "codeUrl": "https://github.com/EMSAREES/Movie-Library",
         "demoUrl": "",
         "technologies": ["C#", "ASP.NET Core", "API"]
