@@ -91,15 +91,18 @@
         "technologies": ["React", "JavaScript", "Python", "Flask"]
         },
         {
-        "id": "movie-Library",
-        "title": "Movie Library",
-        "description": "Movie Library 🎬 — Aplicación web ASP.NET Core MVC para explorar películas usando la API de TMDB. Incluye búsqueda, detalles y exploración de películas.",
-        "image": "/img/project/movieLibrery.webp",
-        "codeUrl": "https://github.com/EMSAREES/Movie-Library",
-        "demoUrl": "",
-        "technologies": ["C#", "ASP.NET Core", "API"]
+        "id": "CineTrack",
+        "title": "CINETRACK",
+        "description": "CineTrack es una plataforma de catálogo de películas y series de televisión desarrollada con React y Vite. Permite a los usuarios descubrir títulos, consultar información detallada, llevar un seguimiento de los episodios vistos, guardar favoritos, crear listas personales y compartir reseñas con la comunidad.",
+        "image": "/img/project/CineTrack.webp",
+        "codeUrl": "https://github.com/EMSAREES/CineTrack",
+        "demoUrl": "https://stirring-jelly-5e8e5a.netlify.app/",
+        "technologies": ["React", "Vite", "React Router", "Supabase", "The Movie Database (TMDB) API"]
         }
     ],
+
+
+
 
     "en": [
         {
@@ -193,13 +196,13 @@
         "technologies": ["React", "JavaScript",  "Python", "Flask"]
         },
         {
-        "id": "movie-Library",
-        "title": "Movie Library",
-        "description": "Movie Library  — ASP.NET Core MVC web application for exploring movies using the TMDB API. Features include search, details, and movie exploration.",
-        "image": "/img/project/movieLibrery.webp",
-        "codeUrl": "https://github.com/EMSAREES/Movie-Library",
-        "demoUrl": "",
-        "technologies": ["C#", "ASP.NET Core", "API"]
+        "id": "CineTrack",
+        "title": "CINETRACK",
+        "description": "CineTrack is a movie and TV series catalog platform built with React and Vite. It helps users discover titles, explore detailed information, keep track of watched episodes, save favorites, create personal lists, and share reviews with the community.",
+        "image": "/img/project/CineTrack.webp",
+        "codeUrl": "https://github.com/EMSAREES/CineTrack",
+        "demoUrl": "https://stirring-jelly-5e8e5a.netlify.app/",
+        "technologies": ["React", "Vite", "React Router", "Supabase", "The Movie Database (TMDB) API"]
         }
     ]
 }
